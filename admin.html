@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kuroiwa Studio — KWI Capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0c'/%3E%3Ctext x='50' y='68' font-family='Georgia' font-size='58' fill='white' text-anchor='middle'%3EK%3C/text%3E%3Crect x='60' y='26' width='7' height='46' fill='%23c0271f'/%3E%3C/svg%3E">
+<style>
+:root{--ink:#0b0b0c;--paper:#f6f5f2;--red:#c0271f;--grey:#6b6b6e;--line:#e4e2dc;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);display:none}
+body.ready{display:block}
+a{color:inherit;text-decoration:none}
+.muted{color:var(--grey)}
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(11,11,12,.94);backdrop-filter:blur(12px);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 26px}
+.top .brand{display:flex;align-items:center;gap:14px}
+.wm{font-weight:800;letter-spacing:-.02em;font-size:20px}.wm .dot{color:var(--red)}
+.top .kanji{font-family:'Fraunces',serif;color:var(--red);font-size:20px}
+.top .st{font-size:12px;color:#bdbcb9;letter-spacing:.16em;text-transform:uppercase}
+.top .actions{display:flex;gap:10px;align-items:center}
+.btn{font-family:inherit;font-size:13px;font-weight:600;padding:9px 16px;border-radius:3px;border:1px solid transparent;cursor:pointer;transition:.25s;background:var(--red);color:#fff}
+.btn:hover{background:#9c1f18}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+.btn.dark{background:#fff;color:var(--ink)}
+.btn.sm{padding:6px 12px;font-size:12px}
+/* layout */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:calc(100vh - 58px)}
+.pane{padding:30px 34px}
+.editor{border-right:1px solid var(--line);background:var(--white)}
+.preview{background:var(--paper);position:sticky;top:58px;height:calc(100vh - 58px);overflow:auto}
+h2.sec{font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin-bottom:4px}
+.hint{font-size:12.5px;color:var(--grey);margin-bottom:22px}
+label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin:16px 0 6px;font-weight:600}
+input,select,textarea{width:100%;font-family:inherit;font-size:14px;padding:11px 12px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink)}
+textarea{resize:vertical;line-height:1.6}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.toolbar{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.toolbar button{font-family:inherit;font-size:12px;padding:6px 10px;border:1px solid var(--line);background:#fff;border-radius:3px;cursor:pointer;color:#333}
+.toolbar button:hover{border-color:var(--ink)}
+.filerow{display:flex;gap:10px;align-items:center;margin-top:6px}
+.filerow input[type=file]{font-size:12px;padding:6px}
+.savebar{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;align-items:center}
+.publish{margin-top:30px;padding:18px;border:1px dashed var(--line);border-radius:6px;background:#faf9f6}
+.publish h3{font-size:14px;margin-bottom:6px}
+.publish p{font-size:12.5px;color:var(--grey);margin-bottom:12px;line-height:1.6}
+/* list */
+.list{margin-top:26px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.rt{font-weight:600;font-size:14.5px}.rm{font-size:12px;color:var(--grey);margin-top:2px}
+.ract{display:flex;gap:8px;align-items:center}
+.ract button,.ract a{font-size:12px;padding:6px 11px;border:1px solid var(--line);border-radius:3px;background:#fff;cursor:pointer;color:#333;font-family:inherit}
+.ract button:hover,.ract a:hover{border-color:var(--ink)}
+.ract .danger{color:var(--red);border-color:#f0cfcc}
+.ract .danger:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.listhead{display:flex;justify-content:space-between;align-items:center}
+.badge{background:var(--ink);color:#fff;font-size:12px;border-radius:100px;padding:3px 10px}
+/* preview render */
+#pv{max-width:640px}
+#pv .pv-cat{color:var(--red);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+#pv h1{font-family:'Fraunces',serif;font-weight:300;font-size:38px;line-height:1.05;letter-spacing:-.02em;margin:12px 0 14px}
+#pv .pv-meta{color:var(--grey);font-size:13px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}
+#pv .pv-sum{font-size:17px;color:#333;margin-bottom:20px;font-weight:500}
+#pv .pv-body{font-size:16px;line-height:1.75;color:#232427}
+#pv .pv-body h2{font-family:'Fraunces',serif;font-weight:400;font-size:24px;margin:26px 0 10px}
+#pv .pv-body h3{font-size:18px;margin:20px 0 8px}
+#pv .pv-body p{margin-bottom:16px}
+#pv .pv-body ul,#pv .pv-body ol{margin:0 0 16px 20px}
+#pv .pv-body blockquote{border-left:3px solid var(--red);padding-left:16px;margin:20px 0;font-family:'Fraunces',serif;font-size:20px}
+#pv .pv-body a{color:var(--red)}
+.pvlabel{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:18px}
+/* toast */
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 22px;border-radius:4px;font-size:13px;opacity:0;pointer-events:none;transition:.3s;z-index:50}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:960px){.grid{grid-template-columns:1fr}.preview{position:static;height:auto}.editor{border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand">
+    <span class="wm">KW<span class="dot">I</span></span>
+    <span class="kanji">黒岩</span>
+    <span class="st">Studio — Back-End</span>
+  </div>
+  <div class="actions">
+    <a href="index.html" class="btn ghost sm">← Website</a>
+    <button class="btn ghost sm" onclick="clearForm()">+ Neu</button>
+    <button class="btn dark sm" onclick="save()">Speichern</button>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- ============ EDITOR ============ -->
+  <div class="pane editor">
+    <h2 class="sec">Studie erstellen</h2>
+    <p class="hint" id="editState">Neue Studie</p>
+
+    <label>Titel</label>
+    <input id="f_title" placeholder="z. B. Wiederbelebung der Erdgeschossflächen 2026">
+
+    <div class="two">
+      <div><label>Kategorie</label>
+        <input id="f_cat" list="cats" placeholder="Immobilien">
+        <datalist id="cats"><option>Immobilien</option><option>Beteiligungen</option><option>Markt</option><option>Makro</option><option>Strategie</option></datalist>
+      </div>
+      <div><label>Datum</label><input id="f_date" type="date"></div>
+    </div>
+
+    <div class="three">
+      <div><label>Autor</label><input id="f_author" placeholder="Kuroiwa Research"></div>
+      <div><label>Lesezeit</label><input id="f_read" placeholder="auto (z. B. 6 Min.)"></div>
+      <div><label>ID / Slug</label><input id="f_id" placeholder="auto aus Titel"></div>
+    </div>
+
+    <label>Zusammenfassung (Teaser)</label>
+    <textarea id="f_summary" rows="2" placeholder="1–2 Sätze für die Übersichtskarte."></textarea>
+
+    <label>Inhalt (HTML)</label>
+    <div class="toolbar">
+      <button onclick="wrap('h2')">H2</button>
+      <button onclick="wrap('h3')">H3</button>
+      <button onclick="wrap('p')">¶ Absatz</button>
+      <button onclick="wrap('b')">Fett</button>
+      <button onclick="wrap('ul')">Liste</button>
+      <button onclick="wrap('blockquote')">Zitat</button>
+      <button onclick="wrap('link')">Link</button>
+      <button onclick="wrap('img')">Bild</button>
+    </div>
+    <textarea id="f_body" rows="12" placeholder="<p>Text …</p>  ·  Markiere Text und klicke oben zum Formatieren."></textarea>
+
+    <div class="two">
+      <div><label>Titelbild (URL)</label><input id="f_cover" placeholder="https://… oder Upload"></div>
+      <div><label>PDF-Link (optional)</label><input id="f_pdf" placeholder="https://…"></div>
+    </div>
+    <div class="filerow">
+      <span class="muted" style="font-size:12px">Bild hochladen (eingebettet):</span>
+      <input type="file" accept="image/*" onchange="coverUpload(this)">
+    </div>
+
+    <label>Tags (Komma-getrennt)</label>
+    <input id="f_tags" placeholder="Retail, Schweiz, Repositionierung">
+
+    <div class="savebar">
+      <button class="btn" onclick="save()">Studie speichern</button>
+      <button class="btn ghost" style="border-color:var(--line);color:var(--ink)" onclick="clearForm()">Zurücksetzen</button>
+    </div>
+
+    <!-- PUBLISH -->
+    <div class="publish">
+      <h3>Publizieren</h3>
+      <p>Studien werden lokal in diesem Browser gespeichert. Zum Veröffentlichen: <b>studies.json exportieren</b> und die Datei im Ordner <code>/data</code> des Repos ersetzen (committen &amp; pushen). GitHub&nbsp;Pages zeigt sie dann live.</p>
+      <div class="savebar" style="margin-top:0">
+        <button class="btn dark" onclick="exportJSON()">⬇ studies.json exportieren</button>
+        <button class="btn ghost" style="border-color:var(--line);color:var(--ink)" onclick="importPublished()">Publizierte laden</button>
+        <label class="btn ghost" style="border-color:var(--line);color:var(--ink);cursor:pointer;margin:0">Import…<input type="file" accept="application/json" hidden onchange="importFile(this)"></label>
+      </div>
+    </div>
+
+    <!-- LIST -->
+    <div class="list">
+      <div class="listhead"><h2 class="sec" style="font-size:20px">Deine Studien</h2><span class="badge"><span id="count">0</span> total</span></div>
+      <div id="list"></div>
+    </div>
+  </div>
+
+  <!-- ============ PREVIEW ============ -->
+  <div class="pane preview">
+    <div class="pvlabel">Live-Vorschau</div>
+    <div id="pv"></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
