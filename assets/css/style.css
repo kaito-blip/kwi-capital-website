@@ -77,20 +77,21 @@ a{color:inherit;text-decoration:none}
    ============================================================ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
   background:#070707;overflow:hidden}
-.hero .herobg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;
-  z-index:0;transform:scale(1.03);animation:kenburns 26s ease-out forwards;will-change:transform}
-@keyframes kenburns{to{transform:scale(1.13)}}
+.hero .herobg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;
+  z-index:0;transform:scale(1.02);animation:kenburns 32s ease-out forwards;will-change:transform}
+@keyframes kenburns{to{transform:scale(1.1)}}
 .hero .veil{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(180deg,rgba(7,7,7,.95) 0%,rgba(7,7,7,.55) 40%,rgba(7,7,7,.62) 68%,rgba(7,7,7,.92) 100%),
-    radial-gradient(85% 65% at 50% 44%,rgba(0,0,0,0) 42%,rgba(0,0,0,.5) 100%)}
+    radial-gradient(56% 46% at 50% 50%, rgba(0,0,0,.60) 0%, rgba(0,0,0,0) 72%),
+    linear-gradient(180deg, rgba(7,7,7,.80) 0%, rgba(7,7,7,.28) 34%, rgba(7,7,7,.40) 64%, rgba(7,7,7,.90) 100%)}
 .hero::before{content:"";position:absolute;top:-26%;left:50%;transform:translateX(-50%);z-index:2;
   width:900px;height:900px;border-radius:50%;pointer-events:none;
   background:radial-gradient(circle,rgba(193,39,45,.18) 0%,rgba(193,39,45,0) 62%)}
 .hero-inner{position:relative;z-index:3;padding-top:80px}
 .hero .eyebrow{margin-bottom:40px}
-.hero .brand{width:min(560px,72vw);margin:0 auto 34px;filter:drop-shadow(0 20px 60px rgba(0,0,0,.6))}
-.hero h1{font-weight:700;font-size:clamp(22px,3vw,38px);letter-spacing:-.01em;line-height:1.12;margin-bottom:22px}
+.hero .brand{width:min(540px,70vw);margin:0 auto 34px;filter:drop-shadow(0 22px 70px rgba(0,0,0,.72))}
+.hero h1{font-weight:400;font-size:clamp(17px,2.1vw,25px);letter-spacing:.01em;line-height:1.5;
+  margin:0 auto;max-width:34ch;color:#e4e4e4}
 .hero .lede{font-size:clamp(15px,1.4vw,18px);max-width:46ch;margin:0 auto;color:#a8a8a8;font-weight:300;line-height:1.7}
 .hero .acts{display:flex;gap:36px;justify-content:center;align-items:center;margin-top:48px;flex-wrap:wrap}
 
