@@ -12,8 +12,26 @@
 <style>
 :root{--ink:#0b0b0c;--paper:#f6f5f2;--red:#c0271f;--grey:#6b6b6e;--line:#e4e2dc;--white:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);display:none}
-body.ready{display:block}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink)}
+/* ===== Member-Gate (luxuriöser Zugang) ===== */
+#gate{position:fixed;inset:0;z-index:1000;background:#000;display:flex;align-items:center;justify-content:center;color:#fff;transition:opacity .6s ease,visibility .6s}
+#gate.out{opacity:0;visibility:hidden}
+#gate::before{content:"";position:absolute;top:-22%;left:50%;transform:translateX(-50%);width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(193,39,45,.14),transparent 62%);pointer-events:none}
+.gate-inner{position:relative;text-align:center;max-width:430px;width:100%;padding:28px}
+.gate-logo{width:200px;max-width:60vw;margin:0 auto 42px;display:block}
+.gate-eyebrow{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:#c1272d;margin-bottom:16px;font-weight:600}
+.gate-h{font-weight:500;font-size:26px;letter-spacing:-.01em;margin-bottom:34px;color:#fff}
+#gateForm{display:flex;flex-direction:column;gap:14px}
+#gateCode{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);border-radius:4px;padding:16px 18px;color:#fff;font-size:15px;letter-spacing:.28em;text-align:center;font-family:inherit}
+#gateCode::placeholder{color:#777;letter-spacing:.16em}
+#gateCode:focus{outline:none;border-color:#c1272d;background:rgba(255,255,255,.06)}
+#gateForm button{background:#c1272d;color:#fff;border:none;border-radius:4px;padding:15px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:.3s;font-family:inherit}
+#gateForm button:hover{background:#e03038}
+.gate-err{color:#e03038;font-size:12.5px;margin-top:14px;min-height:16px;opacity:0;transition:.25s}
+.gate-err.show{opacity:1}
+#gate.shake .gate-inner{animation:shk .4s}
+@keyframes shk{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.gate-foot{margin-top:40px;font-size:10px;color:#555;letter-spacing:.24em;text-transform:uppercase}
 a{color:inherit;text-decoration:none}
 .muted{color:var(--grey)}
 /* header */
@@ -83,6 +101,21 @@ textarea{resize:vertical;line-height:1.6}
 </style>
 </head>
 <body>
+
+<!-- ===== MEMBER-GATE ===== -->
+<div id="gate">
+  <div class="gate-inner">
+    <img class="gate-logo" src="assets/brand/kuroiwa-white.png" alt="Kuroiwa">
+    <div class="gate-eyebrow">Geschlossener Kreis</div>
+    <div class="gate-h">Members</div>
+    <form id="gateForm" autocomplete="off">
+      <input id="gateCode" type="password" placeholder="Membercode" inputmode="text" autocomplete="off" spellcheck="false">
+      <button type="submit">Eintreten</button>
+    </form>
+    <p class="gate-err" id="gateErr">Ungültiger Code.</p>
+    <div class="gate-foot">Kuroiwa · 黒岩</div>
+  </div>
+</div>
 
 <div class="top">
   <div class="brand">

@@ -11,14 +11,26 @@ let editingId = null;
 const $ = s => document.querySelector(s);
 const el = id => document.getElementById(id);
 
-/* ---------- Zugang ---------- */
+/* ---------- Zugang (Member-Gate) ---------- */
 function gate(){
-  if(sessionStorage.getItem('kwi_ok')==='1'){ return show(); }
-  const p = prompt('Zugangscode Members:');
-  if(p===PASS){ sessionStorage.setItem('kwi_ok','1'); show(); }
-  else { document.body.innerHTML = '<div style="min-height:100vh;display:grid;place-items:center;font-family:Inter,sans-serif;color:#0b0b0c;background:#f6f5f2"><div style="text-align:center"><div style="font-size:40px;font-family:Fraunces,serif;color:#c0271f">黒岩</div><p style="margin-top:10px">Kein Zugang.</p><a href="index.html" style="color:#c0271f">← Zur Website</a></div></div>'; }
+  const g = el('gate');
+  if(sessionStorage.getItem('kwi_ok')==='1'){ if(g) g.remove(); init(); return; }
+  const form = el('gateForm'), code = el('gateCode'), err = el('gateErr');
+  setTimeout(()=> code && code.focus(), 120);
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    if(code.value.trim() === PASS){
+      sessionStorage.setItem('kwi_ok','1');
+      g.classList.add('out');
+      setTimeout(()=> g.remove(), 650);
+      init();
+    } else {
+      err.classList.add('show'); g.classList.add('shake');
+      code.value=''; code.focus();
+      setTimeout(()=> g.classList.remove('shake'), 450);
+    }
+  });
 }
-function show(){ document.body.classList.add('ready'); init(); }
 
 /* ---------- Storage ---------- */
 function load(){ try{ studies = JSON.parse(localStorage.getItem(STORE_KEY)||'[]'); }catch(e){ studies=[]; } }
