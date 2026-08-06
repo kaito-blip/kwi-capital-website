@@ -253,9 +253,9 @@ section{padding-block:clamp(90px,12vw,170px)}
     radial-gradient(70% 60% at 50% 45%,rgba(193,39,45,.13),transparent 70%)}
 .cta .wrap{position:relative;z-index:2}
 .cta .mail{display:inline-block;margin-top:6px}
-.cta h2{font-weight:600;font-size:clamp(23px,3vw,40px);line-height:1.1;letter-spacing:-.015em;max-width:20ch;margin:18px auto 16px}
-.cta p{color:#a6a6a6;max-width:42ch;margin:0 auto 30px;font-weight:300;font-size:15px}
-.cta .mail{font-size:clamp(16px,1.8vw,22px);font-weight:600;color:#fff;border-bottom:1px solid var(--line-2);padding-bottom:7px;transition:.4s}
+.cta h2{font-weight:600;font-size:clamp(20px,2.3vw,30px);line-height:1.12;letter-spacing:-.01em;max-width:22ch;margin:16px auto 14px}
+.cta p{color:#a6a6a6;max-width:40ch;margin:0 auto 26px;font-weight:300;font-size:14px}
+.cta .mail{font-size:clamp(15px,1.5vw,19px);font-weight:600;color:#fff;border-bottom:1px solid var(--line-2);padding-bottom:6px;transition:.4s}
 .cta .mail:hover{border-bottom-color:var(--red);color:var(--red-h)}
 
 /* ============================================================
