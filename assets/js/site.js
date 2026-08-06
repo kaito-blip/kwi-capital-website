@@ -99,7 +99,7 @@ async function renderStudies(gridSel, filtersSel, limit){
     if(limit) list = list.slice(0, limit);
     grid.innerHTML = list.length
       ? list.map(card).join('')
-      : `<div class="empty">Noch keine Case Studies veröffentlicht. Lege im <a href="admin.html" style="color:var(--red)">Studio</a> die erste an.</div>`;
+      : `<div class="empty">Noch keine Case Studies veröffentlicht. Lege im <a href="admin.html" style="color:var(--red)">Members</a> die erste an.</div>`;
     // trigger reveal
     grid.querySelectorAll('.rv').forEach((e,i)=> setTimeout(()=>e.classList.add('in'), 60*i));
   }

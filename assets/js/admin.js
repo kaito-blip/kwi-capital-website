@@ -14,7 +14,7 @@ const el = id => document.getElementById(id);
 /* ---------- Zugang ---------- */
 function gate(){
   if(sessionStorage.getItem('kwi_ok')==='1'){ return show(); }
-  const p = prompt('Zugangscode Kuroiwa Studio:');
+  const p = prompt('Zugangscode Members:');
   if(p===PASS){ sessionStorage.setItem('kwi_ok','1'); show(); }
   else { document.body.innerHTML = '<div style="min-height:100vh;display:grid;place-items:center;font-family:Inter,sans-serif;color:#0b0b0c;background:#f6f5f2"><div style="text-align:center"><div style="font-size:40px;font-family:Fraunces,serif;color:#c0271f">黒岩</div><p style="margin-top:10px">Kein Zugang.</p><a href="index.html" style="color:#c0271f">← Zur Website</a></div></div>'; }
 }
