@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
-Sitemap: https://kuroiwa.ch/sitemap.xml
+Sitemap: https://kwicapital.ch/sitemap.xml
