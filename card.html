@@ -129,7 +129,12 @@
 <script>
 (function(){
   var card=document.getElementById('card'),flipped=false,raf=null;
-  function flip(){flipped=!flipped;card.classList.toggle('flipped',flipped)}
+  function flip(){
+    flipped=!flipped;
+    card.style.transition='';
+    card.style.transform='';
+    card.classList.toggle('flipped',flipped);
+  }
   card.addEventListener('click',flip);
   card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
 
@@ -145,15 +150,18 @@
       card.style.transform='rotateY('+((flipped?180:0)+px*10)+'deg) rotateX('+(-py*10)+'deg)';
     });
   });
-  scene.addEventListener('pointerleave',function(){
+  scene.addEventListener('pointerleave',function(e){
+    if(e.pointerType && e.pointerType!=='mouse')return;
     card.style.transition='transform .8s cubic-bezier(.2,.85,.25,1)';
     card.style.transform=flipped?'rotateY(180deg)':'';
   });
 
-  // Gyro-Tilt (Mobile), dezent
+  // Gyro-Tilt (Mobile), dezent — pausiert waehrend der Flip-Animation
   if(window.DeviceOrientationEvent && 'ontouchstart' in window){
+    var gyroPause=0;
+    card.addEventListener('click',function(){gyroPause=Date.now()+900});
     window.addEventListener('deviceorientation',function(e){
-      if(e.gamma===null)return;
+      if(e.gamma===null||Date.now()<gyroPause)return;
       var gx=Math.max(-14,Math.min(14,e.gamma))/1.6, gy=Math.max(-14,Math.min(14,e.beta-45))/2.2;
       card.style.transition='transform .18s ease-out';
       card.style.transform='rotateY('+((flipped?180:0)+gx)+'deg) rotateX('+(-gy)+'deg)';
