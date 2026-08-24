@@ -6,54 +6,156 @@
 <title>Kaito Weingart — Kuroiwa · KWI Capital AG</title>
 <meta name="description" content="Digitale Visitenkarte — Kaito Weingart, Founder KWI Capital AG, Freienbach SZ.">
 <meta name="robots" content="noindex,follow">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#060606">
 <meta property="og:title" content="Kaito Weingart — Kuroiwa · KWI Capital AG">
 <meta property="og:description" content="Founder · KWI Capital AG · Freienbach SZ">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  :root{--red:#D52B1E}
-  body{min-height:100svh;background:radial-gradient(900px 700px at 50% 115%,#191617 0%,#0d0c0c 50%,#070707 100%);
-    font-family:'Helvetica Neue',Arial,sans-serif;color:#fff;display:flex;align-items:center;justify-content:center;padding:28px 20px}
-  .card{width:100%;max-width:400px;text-align:center}
-  .mark{font-size:30px;font-weight:800;letter-spacing:-.7px}
-  .mark em{font-style:normal;color:var(--red)}
-  .sub{font-size:10px;font-weight:700;letter-spacing:6px;color:rgba(255,255,255,.6);margin-top:7px}
-  .photo{width:108px;height:108px;border-radius:50%;object-fit:cover;margin:30px auto 18px;display:block;border:2px solid rgba(255,255,255,.25)}
-  h1{font-size:24px;font-weight:700;letter-spacing:-.3px}
-  .role{font-size:12px;letter-spacing:3px;color:var(--red);font-weight:700;margin-top:7px;text-transform:uppercase}
-  .rule{width:56px;height:2px;background:var(--red);margin:22px auto}
-  .info{font-size:14px;color:rgba(255,255,255,.65);line-height:1.9}
-  .info a{color:#fff;text-decoration:none}
-  .btns{margin-top:28px;display:grid;gap:11px}
-  .btn{display:block;padding:15px 18px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:.3px}
-  .btn-primary{background:var(--red);color:#fff}
-  .btn-ghost{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.16)}
-  .kanji{margin-top:34px;font-size:15px;letter-spacing:8px;color:rgba(255,255,255,.35);font-family:'Hiragino Mincho ProN','Yu Mincho',serif}
-  .foot{margin-top:10px;font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.28);font-weight:600}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  :root{--red:#D52B1E;--ink:#0b0a0a}
+  html,body{height:100%}
+  body{min-height:100svh;background:#060606;font-family:'Helvetica Neue',Arial,sans-serif;color:#fff;
+    display:flex;align-items:center;justify-content:center;padding:34px 18px;overflow-x:hidden;position:relative}
+  body::before{content:'黒岩';position:fixed;right:-6vw;bottom:-16vh;font-size:58vh;line-height:1;
+    font-family:'Hiragino Mincho ProN','Yu Mincho',serif;color:rgba(213,43,30,.045);pointer-events:none;letter-spacing:-2vw}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;
+    background:radial-gradient(900px 640px at 50% 118%,rgba(213,43,30,.07),transparent 60%)}
+  .wrap{width:100%;max-width:430px;position:relative;z-index:2}
+
+  /* ===== CARD ===== */
+  .scene{perspective:1400px}
+  .card{position:relative;width:100%;aspect-ratio:1.586;transform-style:preserve-3d;
+    transition:transform .8s cubic-bezier(.2,.85,.25,1);cursor:pointer}
+  .card.flipped{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+    overflow:hidden;background:linear-gradient(152deg,#171515 0%,#0e0d0d 48%,#090808 100%);
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 30px 60px -18px rgba(0,0,0,.85),0 10px 24px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.07)}
+  .face::before{content:'';position:absolute;inset:0;border-radius:16px;pointer-events:none;
+    background:radial-gradient(120% 90% at 18% 0%,rgba(255,255,255,.055),transparent 55%)}
+  .shine{position:absolute;inset:-40%;pointer-events:none;mix-blend-mode:screen;opacity:.55;
+    background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.13) 50%,transparent 58%);
+    transform:translateX(-70%);animation:sweep 5.5s ease-in-out infinite}
+  @keyframes sweep{0%,58%{transform:translateX(-75%)}82%,100%{transform:translateX(75%)}}
+
+  /* front */
+  .front .mark{position:absolute;top:11.5%;left:9%;font-size:clamp(26px,8.2vw,36px);font-weight:800;letter-spacing:-.8px}
+  .front .mark em{font-style:normal;color:var(--red)}
+  .front .sub{position:absolute;top:29%;left:9.2%;font-size:clamp(8px,2.3vw,10px);font-weight:700;letter-spacing:5.5px;color:rgba(255,255,255,.62)}
+  .front .kbar{position:absolute;top:11.5%;right:17%;height:34%;width:1.5px;background:rgba(255,255,255,.7)}
+  .front .kbar::before{content:'';position:absolute;top:0;left:0;width:1.5px;height:30%;background:var(--red)}
+  .front .kanji{position:absolute;top:12%;right:9%;writing-mode:vertical-rl;font-size:clamp(13px,3.8vw,17px);
+    letter-spacing:7px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;color:#fff}
+  .front .ghost{position:absolute;left:-4%;bottom:-26%;font-size:clamp(120px,42vw,190px);font-weight:700;line-height:1;
+    color:rgba(255,255,255,.028);font-family:'Hiragino Mincho ProN','Yu Mincho',serif;pointer-events:none}
+  .front .loc{position:absolute;bottom:12.5%;left:9.2%;font-size:clamp(7px,2vw,9px);letter-spacing:3.5px;color:rgba(255,255,255,.4);font-weight:600}
+  .front .baseline{position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--red)}
+  .front .baseline::before{content:'';position:absolute;left:0;right:0;top:-1px;height:1px;background:rgba(255,255,255,.18)}
+
+  /* back */
+  .back{transform:rotateY(180deg)}
+  .back .edge{position:absolute;top:0;bottom:0;left:0;width:5px;background:var(--red)}
+  .back .name{position:absolute;top:13%;left:10%;font-size:clamp(19px,5.6vw,25px);font-weight:800;letter-spacing:-.4px}
+  .back .role{position:absolute;top:28.5%;left:10.2%;font-size:clamp(8px,2.3vw,10px);font-weight:700;letter-spacing:4.5px;color:var(--red)}
+  .back .rule{position:absolute;top:39%;left:10%;width:26%;height:1.5px;background:rgba(255,255,255,.25)}
+  .back .lines{position:absolute;top:47%;left:10%;font-size:clamp(10px,3vw,12.5px);line-height:2.05;color:rgba(255,255,255,.78);letter-spacing:.4px}
+  .back .lines b{color:var(--red);font-weight:700;display:inline-block;width:1.4em}
+  .back .kanji{position:absolute;top:13%;right:8.5%;writing-mode:vertical-rl;font-size:clamp(12px,3.4vw,15px);
+    letter-spacing:6px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;color:rgba(255,255,255,.5)}
+  .back .brand{position:absolute;bottom:9%;right:8.5%;font-size:clamp(8px,2.3vw,10px);font-weight:700;letter-spacing:3px;color:rgba(255,255,255,.38)}
+  .back .brand em{font-style:normal;color:var(--red)}
+
+  .hint{text-align:center;margin-top:16px;font-size:10.5px;letter-spacing:3px;color:rgba(255,255,255,.3);font-weight:600;text-transform:uppercase}
+
+  /* ===== ACTIONS ===== */
+  .btns{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 12px;border-radius:12px;
+    font-size:13.5px;font-weight:700;letter-spacing:.4px;text-decoration:none;color:#fff;
+    border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);
+    transition:transform .15s ease,background .15s ease}
+  .btn:active{transform:scale(.97)}
+  .btn-primary{grid-column:1 / -1;background:var(--red);border-color:var(--red);
+    box-shadow:0 12px 30px -10px rgba(213,43,30,.55);font-size:15px;padding:17px}
+  .foot{margin-top:34px;text-align:center;font-size:9.5px;letter-spacing:3.5px;color:rgba(255,255,255,.25);font-weight:600}
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="mark">Kuroiwa<em>.</em></div>
-  <div class="sub">KWI&nbsp;CAPITAL&nbsp;AG</div>
-  <img class="photo" src="assets/brand/kaito-card.jpg" alt="Kaito Weingart">
-  <h1>Kaito Weingart</h1>
-  <div class="role">Founder</div>
-  <div class="rule"></div>
-  <div class="info">
-    <a href="tel:+41792522570">+41 79 252 25 70</a><br>
-    <a href="mailto:kaito@kwicapital.ch">kaito@kwicapital.ch</a><br>
-    Schwerzistrasse 34 · 8807 Freienbach SZ
+<div class="wrap">
+
+  <div class="scene">
+    <div class="card" id="card" role="button" aria-label="Visitenkarte umdrehen" tabindex="0">
+      <div class="face front">
+        <div class="shine"></div>
+        <div class="ghost">岩</div>
+        <div class="mark">Kuroiwa<em>.</em></div>
+        <div class="sub">KWI&nbsp;CAPITAL&nbsp;AG</div>
+        <div class="kbar"></div>
+        <div class="kanji">黒岩</div>
+        <div class="loc">FREIENBACH&nbsp;·&nbsp;SWITZERLAND</div>
+        <div class="baseline"></div>
+      </div>
+      <div class="face back">
+        <div class="shine"></div>
+        <div class="edge"></div>
+        <div class="name">Kaito Weingart</div>
+        <div class="role">FOUNDER</div>
+        <div class="rule"></div>
+        <div class="lines">
+          <b>T</b>+41 79 252 25 70<br>
+          <b>M</b>kaito@kwicapital.ch<br>
+          <b>A</b>Schwerzistrasse 34 · 8807 Freienbach
+        </div>
+        <div class="kanji">黒岩</div>
+        <div class="brand">KUROIWA<em>.</em>&nbsp;&nbsp;KWICAPITAL.CH</div>
+      </div>
+    </div>
   </div>
+  <div class="hint">Tippen zum Umdrehen</div>
+
   <div class="btns">
     <a class="btn btn-primary" href="kaito.vcf" download>Kontakt speichern</a>
-    <a class="btn btn-ghost" href="tel:+41792522570">Anrufen</a>
-    <a class="btn btn-ghost" href="mailto:kaito@kwicapital.ch">E-Mail schreiben</a>
-    <a class="btn btn-ghost" href="https://www.linkedin.com/company/kwicapital">LinkedIn</a>
-    <a class="btn btn-ghost" href="https://kwicapital.ch">kwicapital.ch</a>
+    <a class="btn" href="tel:+41792522570">Anrufen</a>
+    <a class="btn" href="mailto:kaito@kwicapital.ch">E-Mail</a>
+    <a class="btn" href="https://www.linkedin.com/company/kwicapital">LinkedIn</a>
+    <a class="btn" href="https://kwicapital.ch">kwicapital.ch</a>
   </div>
-  <div class="kanji">黒岩</div>
-  <div class="foot">FREIENBACH&nbsp;·&nbsp;SWITZERLAND</div>
+
+  <div class="foot">KWI&nbsp;CAPITAL&nbsp;AG&nbsp;·&nbsp;FREIENBACH&nbsp;SZ&nbsp;·&nbsp;SWITZERLAND</div>
 </div>
+
+<script>
+(function(){
+  var card=document.getElementById('card'),flipped=false,raf=null;
+  function flip(){flipped=!flipped;card.classList.toggle('flipped',flipped)}
+  card.addEventListener('click',flip);
+  card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});
+
+  // 3D-Tilt (Desktop-Pointer)
+  var scene=card.parentElement;
+  scene.addEventListener('pointermove',function(e){
+    if(e.pointerType!=='mouse')return;
+    var r=card.getBoundingClientRect();
+    var px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+    if(raf)cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(function(){
+      card.style.transition='transform .1s ease-out';
+      card.style.transform='rotateY('+((flipped?180:0)+px*10)+'deg) rotateX('+(-py*10)+'deg)';
+    });
+  });
+  scene.addEventListener('pointerleave',function(){
+    card.style.transition='transform .8s cubic-bezier(.2,.85,.25,1)';
+    card.style.transform=flipped?'rotateY(180deg)':'';
+  });
+
+  // Gyro-Tilt (Mobile), dezent
+  if(window.DeviceOrientationEvent && 'ontouchstart' in window){
+    window.addEventListener('deviceorientation',function(e){
+      if(e.gamma===null)return;
+      var gx=Math.max(-14,Math.min(14,e.gamma))/1.6, gy=Math.max(-14,Math.min(14,e.beta-45))/2.2;
+      card.style.transition='transform .18s ease-out';
+      card.style.transform='rotateY('+((flipped?180:0)+gx)+'deg) rotateX('+(-gy)+'deg)';
+    },true);
+  }
+})();
+</script>
 </body>
 </html>
