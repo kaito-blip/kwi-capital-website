@@ -8,7 +8,7 @@
 (function () {
   var CFG = {
     gtm:     'GTM-KFHC6SKX',   // Google Tag Manager Container-ID
-    clarity: 'XXXXXXXXXX'     // Microsoft Clarity Projekt-ID
+    clarity: 'yc5olsvvxa'     // Microsoft Clarity Projekt-ID
     // GA4 (G-XXXX) und Google Ads (AW-XXXX) werden IM GTM konfiguriert (siehe Anleitung)
   };
   var isSet = function (v) { return v && v.indexOf('XXXX') === -1; };
