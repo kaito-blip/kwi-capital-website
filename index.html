@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+<!-- KWI-ANALYTICS: Google Consent Mode v2 (Default = verweigert bis Einwilligung) -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kuroiwa — KWI Capital AG | Schweizerische Investment-Gesellschaft</title>
@@ -119,5 +125,8 @@
   window.addEventListener('load', ()=> setTimeout(()=> document.getElementById('pre')?.classList.add('done'), 600));
   setTimeout(()=> document.getElementById('pre')?.classList.add('done'), 2400);
 </script>
+<!-- KWI-ANALYTICS -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden" title="gtm"></iframe></noscript>
+<script src="/assets/js/kwi-analytics.js" defer></script>
 </body>
 </html>
