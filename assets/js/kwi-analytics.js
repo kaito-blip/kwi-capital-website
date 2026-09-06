@@ -18,15 +18,32 @@
   function gtag() { window.dataLayer.push(arguments); }
   function ready(fn) { document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn); }
 
-  /* ---------- Google Tag Manager (erst mit echter ID) ---------- */
-  (function loadGTM() {
-    if (!isSet(CFG.gtm)) return;
+  /* ---------- Google Tag Manager (lazy: nach Load+Idle oder erster Interaktion) ----------
+     GTM+GA4 wiegen ~300 KB und drücken sonst den LCP auf langsamen Verbindungen.
+     Der dataLayer puffert alles (inkl. Consent-Updates) — GTM verarbeitet ihn beim Laden. */
+  var gtmLoaded = false;
+  function loadGTM() {
+    if (gtmLoaded || !isSet(CFG.gtm)) return;
+    gtmLoaded = true;
     (function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dlp = l != 'dataLayer' ? '&l=' + l : '';
       j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dlp;
       f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', CFG.gtm);
+  }
+  (function scheduleGTM() {
+    if (!isSet(CFG.gtm)) return;
+    var evs = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    var onFirst = function () {
+      evs.forEach(function (e) { removeEventListener(e, onFirst, { passive: true }); });
+      loadGTM();
+    };
+    evs.forEach(function (e) { addEventListener(e, onFirst, { passive: true }); });
+    window.addEventListener('load', function () {
+      ('requestIdleCallback' in window) ? requestIdleCallback(loadGTM, { timeout: 3500 }) : setTimeout(loadGTM, 3000);
+    });
+    setTimeout(loadGTM, 7000); // Fallback, falls load nie feuert
   })();
 
   /* ---------- Consent ---------- */
