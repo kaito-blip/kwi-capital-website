@@ -47,7 +47,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <style>
 /* ============ Fonts: self-hosted (revDSG) ============ */
-@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:optional;
   src:url('assets/fonts/inter-var.woff2') format('woff2');
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FB01-FB02}
 
@@ -130,7 +130,7 @@ h2{font-weight:500;font-size:clamp(30px,4.6vw,54px);line-height:1.1;letter-spaci
   display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--muted);
   font-size:10px;letter-spacing:.3em;text-transform:uppercase}
 .scrollcue .ln{width:1px;height:44px;background:linear-gradient(to bottom,var(--muted),transparent);
-  transform-origin:top;animation:cue 1.6s var(--ease) 1;/* endlich, 1×: Speed Index & WCAG 2.2.2 */}
+  transform-origin:top;animation:cue 1.2s var(--ease) 1;/* endlich, 1×: Speed Index & WCAG 2.2.2 */}
 @keyframes cue{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1)}}
 @media (prefers-reduced-motion:reduce){.scrollcue .ln{animation:none}}
 
