@@ -38,7 +38,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 {"@context":"https://schema.org","@type":"FinancialService","name":"KWI Capital AG","legalName":"KWI Capital AG","alternateName":["Kuroiwa","Kuroiwa · KWI Capital AG","Kuroiwa Capital"],"url":"https://kwicapital.ch/","logo":"https://kwicapital.ch/assets/brand/kuroiwa-white.png","image":"https://kwicapital.ch/assets/brand/og.png","description":"Unabhängige Schweizer Investment-Gesellschaft für Real Estate und Beteiligungen. Privates Kapital, mit Überzeugung investiert.","foundingDate":"2026","vatID":"CHE-221.054.296 MWST","taxID":"CHE-221.054.296","identifier":{"@type":"PropertyValue","propertyID":"UID","value":"CHE-221.054.296"},"knowsAbout":["Real Estate","Immobilien","Beteiligungen","Investments"],"founder":{"@type":"Person","name":"Kaito Weingart","jobTitle":"Gründer & Verwaltungsrat"},"address":{"@type":"PostalAddress","streetAddress":"Schwerzistrasse 34","postalCode":"8807","addressLocality":"Freienbach","addressRegion":"Schwyz","addressCountry":"CH"},"areaServed":"CH","email":"info@kwicapital.ch","sameAs":["https://www.linkedin.com/company/kwicapital"]}
 </script>
 <!-- Performance: LCP-Logo + Variable Font vorladen -->
-<link rel="preload" as="image" href="assets/brand/kuroiwa-white-v2.webp" fetchpriority="high">
+<link rel="preload" as="image" imagesrcset="assets/brand/kuroiwa-white-v2-470.webp 470w, assets/brand/kuroiwa-white-v2.webp 940w" imagesizes="(max-width:860px) 62vw, 470px" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-var.woff2" crossorigin>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/favicon-48.png">
@@ -228,7 +228,7 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
 .footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
 .footer .logo{width:150px;height:42px;object-fit:contain}
 .footer .desc{margin-top:14px;font-size:13px;color:var(--muted)}
-.footer h4{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-bottom:18px;font-weight:600}
+.footer h3{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-bottom:18px;font-weight:600}
 .footer .top a{display:block;font-size:14px;color:var(--body);margin-bottom:11px;transition:color .3s}
 .footer .top a:hover{color:#fff}
 .flags{display:flex;gap:9px;margin-top:14px}
@@ -244,6 +244,20 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
   .lead-grid{text-align:center;justify-items:center}
   .lead-links{justify-content:center}
 }
+
+/* ============ Consent-Banner (statisch gerendert → kein spätes LCP) ============ */
+#kwi-cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:99999;max-width:560px;margin:0 auto;
+  background:#0c0b0b;border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 24px 70px rgba(0,0,0,.6);overflow:hidden}
+#kwi-cc .bar{height:4px;background:var(--red)}
+#kwi-cc .in2{padding:16px 18px}
+#kwi-cc p{margin:0 0 13px;font-size:12.5px;line-height:1.55;color:var(--body)}
+#kwi-cc a{color:var(--red-lt);text-decoration:underline}
+#kwi-cc .btns{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+#kwi-cc button{cursor:pointer;border-radius:9px;padding:10px 18px;font:inherit;font-size:12.5px;
+  font-weight:700;letter-spacing:.3px;border:1px solid transparent}
+#kwi-cc .deny{background:transparent;color:var(--body);border-color:var(--line-2)}
+#kwi-cc .ok{background:var(--red);color:#fff}
 </style>
 </head>
 <body>
@@ -272,7 +286,9 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <img class="k-logo" src="assets/brand/kuroiwa-white-v2.webp" width="940" height="264"
+  <img class="k-logo" src="assets/brand/kuroiwa-white-v2.webp"
+       srcset="assets/brand/kuroiwa-white-v2-470.webp 470w, assets/brand/kuroiwa-white-v2.webp 940w"
+       sizes="(max-width:860px) 62vw, 470px" width="940" height="264"
        alt="Kuroiwa — KWI Capital AG" fetchpriority="high" decoding="async">
   <h1 class="rv in" data-i18n="hero_h1">Privates Kapital, mit Überzeugung investiert.</h1>
   <p class="sub rv in" data-i18n="hero_sub">Unabhängige Schweizer Investment-Gesellschaft · Real Estate · Beteiligungen</p>
@@ -453,13 +469,13 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
         </div>
       </div>
       <div>
-        <h4>Navigation</h4>
+        <h3>Navigation</h3>
         <a href="#haus" data-i18n="nav_haus2">Das Haus</a>
         <a href="#studien" data-i18n="nav_studien2">Studien</a>
         <a href="admin.html">Members</a>
       </div>
       <div>
-        <h4 data-i18n="foot_kontakt">Kontakt</h4>
+        <h3 data-i18n="foot_kontakt">Kontakt</h3>
         <a href="mailto:info@kwicapital.ch">info@kwicapital.ch</a>
         <a href="impressum.html" data-i18n="foot_imp">Impressum &amp; Datenschutz</a>
       </div>
@@ -559,7 +575,9 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
     form_name:'Name', form_mail:'Email', form_msg:'Your inquiry', form_btn:'Send inquiry',
     form_note:'Your details never leave the browser — the inquiry is sent via your own email client.',
     foot_ch:'Switzerland', foot_ch2:'Switzerland', foot_kontakt:'Contact', foot_imp:'Legal & Privacy',
-    foot_disc:'The contents of this website are for information purposes only. They constitute neither investment advice nor an offer or solicitation to acquire financial instruments.'
+    foot_disc:'The contents of this website are for information purposes only. They constitute neither investment advice nor an offer or solicitation to acquire financial instruments.',
+    cc_text:'With your consent we use services for analytics and improvement (Google Analytics, Google Ads, Microsoft Clarity). Consent is voluntary and revocable at any time. <a href="impressum.html">Details</a>',
+    cc_deny:'Essential only', cc_ok:'Accept'
   };
   var DE = {};
   document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -586,7 +604,19 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
   }catch(err){}
 })();
 </script>
-<!-- KWI-ANALYTICS (Consent-Banner, GTM, Clarity — gemeinsame Infrastruktur) -->
+<!-- Consent-Banner: statisch im HTML (paints mit First Paint); kwi-analytics.js bindet die Buttons -->
+<div id="kwi-cc" role="dialog" aria-label="Cookie-Einwilligung">
+  <div class="bar"></div>
+  <div class="in2">
+    <p data-i18n="cc_text">Wir setzen mit Ihrer Einwilligung Dienste zur Analyse und Verbesserung ein (Google Analytics, Google Ads, Microsoft Clarity). Die Einwilligung ist freiwillig und jederzeit widerrufbar. <a href="impressum.html">Details</a></p>
+    <div class="btns">
+      <button class="deny" type="button" data-i18n="cc_deny">Nur notwendige</button>
+      <button class="ok" type="button" data-i18n="cc_ok">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+<script>try{if(localStorage.getItem('kwi-consent'))document.getElementById('kwi-cc').style.display='none'}catch(e){}</script>
+<!-- KWI-ANALYTICS (Consent-Logik, GTM, Clarity — gemeinsame Infrastruktur) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFHC6SKX" height="0" width="0" style="display:none;visibility:hidden" title="gtm"></iframe></noscript>
 <script src="/assets/js/kwi-analytics.js" defer></script>
 </body>
