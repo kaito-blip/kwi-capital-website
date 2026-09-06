@@ -38,7 +38,7 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
 {"@context":"https://schema.org","@type":"FinancialService","name":"KWI Capital AG","legalName":"KWI Capital AG","alternateName":["Kuroiwa","Kuroiwa · KWI Capital AG","Kuroiwa Capital"],"url":"https://kwicapital.ch/","logo":"https://kwicapital.ch/assets/brand/kuroiwa-white.png","image":"https://kwicapital.ch/assets/brand/og.png","description":"Unabhängige Schweizer Investment-Gesellschaft für Real Estate und Beteiligungen. Privates Kapital, mit Überzeugung investiert.","foundingDate":"2026","vatID":"CHE-221.054.296 MWST","taxID":"CHE-221.054.296","identifier":{"@type":"PropertyValue","propertyID":"UID","value":"CHE-221.054.296"},"knowsAbout":["Real Estate","Immobilien","Beteiligungen","Investments"],"founder":{"@type":"Person","name":"Kaito Weingart","jobTitle":"Gründer & Verwaltungsrat"},"address":{"@type":"PostalAddress","streetAddress":"Schwerzistrasse 34","postalCode":"8807","addressLocality":"Freienbach","addressRegion":"Schwyz","addressCountry":"CH"},"areaServed":"CH","email":"info@kwicapital.ch","sameAs":["https://www.linkedin.com/company/kwicapital"]}
 </script>
 <!-- Performance: LCP-Logo + Variable Font vorladen -->
-<link rel="preload" as="image" imagesrcset="assets/brand/kuroiwa-white-v2-470.webp 470w, assets/brand/kuroiwa-white-v2.webp 940w" imagesizes="(max-width:860px) 62vw, 470px" fetchpriority="high">
+<link rel="preload" as="image" href="assets/brand/kuroiwa-white-v2.webp" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-var.woff2" crossorigin>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/favicon-48.png">
@@ -130,7 +130,7 @@ h2{font-weight:500;font-size:clamp(30px,4.6vw,54px);line-height:1.1;letter-spaci
   display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--muted);
   font-size:10px;letter-spacing:.3em;text-transform:uppercase}
 .scrollcue .ln{width:1px;height:44px;background:linear-gradient(to bottom,var(--muted),transparent);
-  transform-origin:top;animation:cue 1.8s var(--ease) 2;/* endlich (<5s) → WCAG 2.2.2 */}
+  transform-origin:top;animation:cue 1.6s var(--ease) 1;/* endlich, 1×: Speed Index & WCAG 2.2.2 */}
 @keyframes cue{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1)}}
 @media (prefers-reduced-motion:reduce){.scrollcue .ln{animation:none}}
 
@@ -286,9 +286,7 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <img class="k-logo" src="assets/brand/kuroiwa-white-v2.webp"
-       srcset="assets/brand/kuroiwa-white-v2-470.webp 470w, assets/brand/kuroiwa-white-v2.webp 940w"
-       sizes="(max-width:860px) 62vw, 470px" width="940" height="264"
+  <img class="k-logo" src="assets/brand/kuroiwa-white-v2.webp" width="940" height="264"
        alt="Kuroiwa — KWI Capital AG" fetchpriority="high" decoding="async">
   <h1 class="rv in" data-i18n="hero_h1">Privates Kapital, mit Überzeugung investiert.</h1>
   <p class="sub rv in" data-i18n="hero_sub">Unabhängige Schweizer Investment-Gesellschaft · Real Estate · Beteiligungen</p>
