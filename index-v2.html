@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- ============================================================
+     KUROIWA · KWI CAPITAL AG — VERSION 2.0 (self-contained)
+     Parallel-Version zu index.html (V1). Umschalten: / vs. /index-v2.html
+     Beim Promoten zu index.html: robots auf "index,follow" stellen.
+     ============================================================ -->
+<!-- KWI-ANALYTICS: Google Consent Mode v2 (Default = verweigert bis Einwilligung) -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500,region:['CH','GB','AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO']});
+gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted',functionality_storage:'granted',security_storage:'granted'});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kuroiwa — KWI Capital AG | Schweizerische Investment-Gesellschaft</title>
+<meta name="description" content="Kuroiwa · KWI Capital AG, Freienbach SZ — unabhängige Schweizer Investment-Gesellschaft für Real Estate, Luxusgüter und Beteiligungen. Privates Kapital, mit Überzeugung investiert. Auf Einladung.">
+<link rel="canonical" href="https://kwicapital.ch/">
+<meta name="robots" content="noindex,follow"><!-- V2 parallel — bei Promotion auf index,follow -->
+<meta name="theme-color" content="#0a0a0a">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kuroiwa · KWI Capital AG">
+<meta property="og:locale" content="de_CH">
+<meta property="og:title" content="Kuroiwa — KWI Capital AG | Schweizerische Investment-Gesellschaft">
+<meta property="og:description" content="Eine unabhängige Schweizer Investment-Gesellschaft. Privates Kapital, mit Überzeugung investiert.">
+<meta property="og:url" content="https://kwicapital.ch/">
+<meta property="og:image" content="https://kwicapital.ch/assets/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kuroiwa — Schweizerische Investment-Gesellschaft">
+<meta name="twitter:description" content="Eine unabhängige Schweizer Investment-Gesellschaft. Privates Kapital, mit Überzeugung investiert.">
+<meta name="twitter:image" content="https://kwicapital.ch/assets/brand/og.png">
+<!-- Structured data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FinancialService","name":"KWI Capital AG","legalName":"KWI Capital AG","alternateName":["Kuroiwa","Kuroiwa · KWI Capital AG","Kuroiwa Capital"],"url":"https://kwicapital.ch/","logo":"https://kwicapital.ch/assets/brand/kuroiwa-white.png","image":"https://kwicapital.ch/assets/brand/og.png","description":"Unabhängige Schweizer Investment-Gesellschaft für Real Estate, Luxusgüter und Beteiligungen. Privates Kapital, mit Überzeugung investiert.","foundingDate":"2026","vatID":"CHE-221.054.296 MWST","taxID":"CHE-221.054.296","identifier":{"@type":"PropertyValue","propertyID":"UID","value":"CHE-221.054.296"},"knowsAbout":["Real Estate","Immobilien","Luxusgüter","Beteiligungen","Investments"],"founder":{"@type":"Person","name":"Kaito Weingart","jobTitle":"Gründer & Verwaltungsrat"},"address":{"@type":"PostalAddress","streetAddress":"Schwerzistrasse 34","postalCode":"8807","addressLocality":"Freienbach","addressRegion":"Schwyz","addressCountry":"CH"},"areaServed":"CH","email":"info@kwicapital.ch","sameAs":["https://www.linkedin.com/company/kwicapital"]}
+</script>
+<!-- Performance: LCP-Logo + Variable Font vorladen -->
+<link rel="preload" as="image" href="assets/brand/kuroiwa-white-v2.webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-var.woff2" crossorigin>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/brand/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/brand/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<style>
+/* ============ Fonts: self-hosted (revDSG) ============ */
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+  src:url('assets/fonts/inter-var.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+FB01-FB02}
+
+/* ============ Tokens (WCAG-2.2-AA-geprüfte Kontraste auf #0a0a0a) ============ */
+:root{
+  --bg:#0a0a0a; --bg2:#070707;
+  --ink:#f4f4f4;          /* 18.6:1 */
+  --body:#cfcfcf;         /* 13.1:1 */
+  --soft:#b9b9b9;         /* 10.3:1 */
+  --muted:#9a9a9a;        /*  7.1:1 */
+  --line:rgba(255,255,255,.12);
+  --line-2:rgba(255,255,255,.42); /* UI-Borders ≥3:1 */
+  --red:#c1272d;          /* nur gross/dekorativ (3.4:1) */
+  --red-lt:#e0574a;       /* Links/kleine Akzente (5.3:1) */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--body);font-family:'Inter','Helvetica Neue',Arial,sans-serif;
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2px solid var(--red-lt);outline-offset:3px;border-radius:2px}
+
+/* Skip-Link (a11y) */
+.skip{position:absolute;left:-9999px;top:0;z-index:10000;background:#fff;color:#000;
+  padding:12px 22px;font-weight:700;font-size:14px}
+.skip:focus{left:16px;top:16px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.eyebrow{display:block;font-size:10.5px;letter-spacing:.38em;text-transform:uppercase;
+  font-weight:600;color:var(--soft);margin-bottom:22px}
+.center{text-align:center}
+h2{font-weight:500;font-size:clamp(30px,4.6vw,54px);line-height:1.1;letter-spacing:-.015em;color:var(--ink)}
+.lede{font-size:clamp(16px,1.5vw,19px);color:var(--body);font-weight:300;max-width:60ch}
+
+/* ============ Reveal (nur transform/opacity → CLS-sicher) ============ */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ============ Nav ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;
+  justify-content:space-between;padding:18px 28px;transition:background .4s,border-color .4s;
+  border-bottom:1px solid transparent}
+.nav.solid{background:rgba(7,7,7,.92);backdrop-filter:blur(12px);border-color:var(--line)}
+.nav .logo{width:132px;height:37px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);transition:color .3s}
+.nav-links a:hover{color:#fff}
+.nav-cta{border:1px solid var(--line-2);padding:9px 20px;color:#fff !important}
+.nav-cta:hover{background:#fff;color:#000 !important}
+.lang-btn{background:none;border:1px solid var(--line-2);color:var(--soft);cursor:pointer;
+  font:inherit;font-size:11.5px;letter-spacing:.14em;padding:8px 13px;transition:.3s}
+.lang-btn:hover{color:#fff;border-color:#fff}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:10px}
+.burger span{width:26px;height:2px;background:#fff;display:block;margin:6px 0;transition:transform .3s,opacity .3s}
+@media (max-width:860px){
+  .nav-links{display:none;position:fixed;inset:0;background:rgba(7,7,7,.97);
+    flex-direction:column;justify-content:center;gap:34px;font-size:16px}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:15px}
+  .burger{display:block;position:relative;z-index:101}
+  .burger.x span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger.x span:nth-child(2){opacity:0}
+  .burger.x span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+}
+
+/* ============ Hero ============ */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;background:#000;padding:110px 24px 80px;position:relative}
+.k-logo{width:min(62vw,470px);height:auto}
+.hero h1{margin-top:44px;font-weight:300;font-size:clamp(19px,2.3vw,27px);letter-spacing:.01em;
+  color:var(--ink);max-width:26ch}
+.hero .sub{margin-top:18px;font-size:clamp(12.5px,1.2vw,14.5px);letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);font-weight:500}
+.scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--muted);
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase}
+.scrollcue .ln{width:1px;height:44px;background:linear-gradient(to bottom,var(--muted),transparent);
+  transform-origin:top;animation:cue 1.8s var(--ease) 2;/* endlich (<5s) → WCAG 2.2.2 */}
+@keyframes cue{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.scrollcue .ln{animation:none}}
+
+/* ============ Sections ============ */
+section{padding:clamp(90px,12vw,150px) 0;position:relative}
+.sec-dark{background:var(--bg2)}
+
+/* Haus */
+.haus-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(40px,6vw,90px);align-items:start}
+.haus-grid p+p{margin-top:20px}
+.kanji-mark{position:absolute;right:-2%;top:6%;font-size:clamp(160px,26vw,380px);line-height:.9;
+  color:#fff;opacity:.035;pointer-events:none;user-select:none;font-weight:700}
+.facts{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line)}
+.fact{background:var(--bg2);padding:24px 22px}
+.fact b{display:block;color:var(--ink);font-weight:500;font-size:15.5px;margin-bottom:6px;letter-spacing:.01em}
+.fact span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* Fokus */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:64px}
+.card{background:var(--bg);padding:44px 34px;position:relative;overflow:hidden}
+.card .num{font-size:11px;letter-spacing:.3em;color:var(--muted)}
+.card h3{margin:18px 0 14px;font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.card p{font-size:15px;color:var(--body);font-weight:300}
+.card::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;
+  background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.card:hover::after{transform:scaleX(1)}
+
+/* Prinzipien */
+.prin{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(34px,4vw,60px);margin-top:64px}
+.pr{border-top:1px solid var(--line);padding-top:26px}
+.pr .num{font-size:12px;letter-spacing:.28em;color:var(--red-lt);font-weight:600}
+.pr h3{margin:14px 0 10px;font-size:19px;font-weight:500;color:var(--ink)}
+.pr p{font-size:15px;font-weight:300}
+
+/* Studien */
+.study-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:64px}
+.scard{border:1px solid var(--line);padding:34px 30px;display:flex;flex-direction:column;
+  transition:border-color .4s,transform .4s var(--ease);background:var(--bg)}
+.scard:hover{border-color:var(--line-2);transform:translateY(-4px)}
+.scard .meta{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.scard h3{font-size:19px;font-weight:500;color:var(--ink);line-height:1.35;letter-spacing:-.01em}
+.scard p{margin-top:14px;font-size:14px;font-weight:300;color:var(--body);flex:1}
+.scard .read{margin-top:24px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+.scard:hover .read{color:#fff}
+.more{margin-top:54px;text-align:center}
+.link-lux{display:inline-block;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:#fff;padding-bottom:9px;border-bottom:1px solid var(--line-2);transition:border-color .4s}
+.link-lux:hover{border-color:#fff}
+.link-lux .arw{display:inline-block;transition:transform .4s var(--ease)}
+.link-lux:hover .arw{transform:translateX(6px)}
+
+/* Führung */
+.lead-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(36px,5vw,70px);align-items:center;max-width:860px;margin:64px auto 0}
+.portrait{width:200px;height:200px;border-radius:50%;object-fit:cover;filter:grayscale(1) contrast(1.05);
+  border:1px solid var(--line-2)}
+.lead-grid h3{font-size:24px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.lead-grid .role{margin-top:6px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red-lt);font-weight:600}
+.lead-grid p{margin-top:18px;font-size:15.5px;font-weight:300;max-width:52ch}
+.lead-links{margin-top:22px;display:flex;gap:26px;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.lead-links a{color:var(--soft);border-bottom:1px solid var(--line);padding-bottom:5px;transition:.3s}
+.lead-links a:hover{color:#fff;border-color:#fff}
+
+/* Kontakt */
+.cta{position:relative;overflow:hidden;text-align:center;background:#000}
+.cta .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28}
+.cta .veil{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(0,0,0,.72) 78%)}
+.cta .wrap{position:relative;z-index:2}
+.cta p.intro{margin:22px auto 0;max-width:52ch;font-weight:300}
+.mail{display:inline-block;margin-top:34px;font-size:clamp(19px,2.4vw,28px);color:#fff;font-weight:300;
+  letter-spacing:.01em;border-bottom:1px solid var(--line-2);padding-bottom:8px;transition:border-color .4s}
+.mail:hover{border-color:#fff}
+/* dezentes Formular */
+.invite{max-width:560px;margin:64px auto 0;text-align:left}
+.invite .hint{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+  text-align:center;margin-bottom:30px}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:9px}
+.field input,.field textarea{width:100%;background:rgba(255,255,255,.045);border:1px solid var(--line-2);
+  color:#fff;font:inherit;font-size:15px;padding:14px 16px;border-radius:2px;transition:border-color .3s,background .3s}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field input:focus,.field textarea:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.07)}
+.field textarea{min-height:120px;resize:vertical}
+.invite button{width:100%;background:#fff;color:#000;border:0;cursor:pointer;font:inherit;
+  font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:17px;
+  border-radius:2px;transition:background .3s}
+.invite button:hover{background:#dcdcdc}
+.privacy-note{margin-top:16px;font-size:12.5px;color:var(--muted);text-align:center;font-weight:300}
+
+/* Footer */
+.footer{border-top:1px solid var(--line);padding:70px 0 44px;background:var(--bg2)}
+.footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
+.footer .logo{width:150px;height:42px;object-fit:contain}
+.footer .desc{margin-top:14px;font-size:13px;color:var(--muted)}
+.footer h5{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-bottom:18px;font-weight:600}
+.footer .top a{display:block;font-size:14px;color:var(--body);margin-bottom:11px;transition:color .3s}
+.footer .top a:hover{color:#fff}
+.flags{display:flex;gap:9px;margin-top:14px}
+.legal{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--muted);line-height:1.9;font-weight:300}
+.legal .disclaimer{margin-top:10px;max-width:88ch}
+.bottom{margin-top:26px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+
+@media (max-width:860px){
+  .haus-grid,.prin,.lead-grid{grid-template-columns:1fr}
+  .cards,.study-grid{grid-template-columns:1fr}
+  .footer .top{grid-template-columns:1fr}
+  .lead-grid{text-align:center;justify-items:center}
+  .lead-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Hauptnavigation">
+  <a href="#top" aria-label="Kuroiwa — zum Seitenanfang">
+    <img class="logo" src="assets/brand/kuroiwa-white-v2.webp" width="1120" height="315" alt="Kuroiwa — KWI Capital AG">
+  </a>
+  <button class="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navlinks">
+    <a href="#haus" data-i18n="nav_haus">Das Haus</a>
+    <a href="#fokus" data-i18n="nav_fokus">Fokus</a>
+    <a href="#studien" data-i18n="nav_studien">Studien</a>
+    <a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a>
+    <a href="admin.html" class="nav-cta">Members</a>
+    <button class="lang-btn" id="langBtn" aria-label="Switch language to English">EN</button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <img class="k-logo" src="assets/brand/kuroiwa-white-v2.webp" width="1120" height="315"
+       alt="Kuroiwa — KWI Capital AG" fetchpriority="high" decoding="async">
+  <h1 class="rv in" data-i18n="hero_h1">Privates Kapital, mit Überzeugung investiert.</h1>
+  <p class="sub rv in" data-i18n="hero_sub">Unabhängige Schweizer Investment-Gesellschaft · Real Estate · Luxusgüter · Beteiligungen</p>
+  <div class="scrollcue" aria-hidden="true"><span data-i18n="scroll">Scrollen</span><span class="ln"></span></div>
+</header>
+
+<!-- DAS HAUS -->
+<section id="haus" class="sec-dark">
+  <div class="kanji-mark" aria-hidden="true">黒岩</div>
+  <div class="wrap">
+    <div class="haus-grid">
+      <div>
+        <span class="eyebrow rv" data-i18n="haus_eyebrow">Das Haus</span>
+        <h2 class="rv" data-i18n="haus_h2">黒岩 — der schwarze Fels.</h2>
+      </div>
+      <div>
+        <p class="lede rv" data-i18n="haus_p1">Kuroiwa ist eine unabhängige Schweizer Investment-Gesellschaft mit Sitz in Freienbach am Zürichsee. Wir investieren privates Kapital — konzentriert, langfristig und mit eigener Überzeugung — in Real Estate, Luxusgüter und unternehmerische Beteiligungen.</p>
+        <p class="lede rv" data-i18n="haus_p2">Der Name ist Programm: die Ruhe des Felsens, die Präzision zweier Kulturen — Japan und die Schweiz. Wir wachsen über Beziehungen, nicht über Reichweite.</p>
+      </div>
+    </div>
+    <div class="facts rv">
+      <div class="fact"><b data-i18n="fact1_b">Aktiengesellschaft</b><span data-i18n="fact1_s">nach Schweizer Recht</span></div>
+      <div class="fact"><b>CHE-221.054.296</b><span data-i18n="fact2_s">Handelsregister / UID</span></div>
+      <div class="fact"><b>Freienbach SZ</b><span data-i18n="fact3_s">Sitz am Zürichsee</span></div>
+      <div class="fact"><b>2026</b><span data-i18n="fact4_s">Gegründet</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOKUS -->
+<section id="fokus">
+  <div class="wrap">
+    <span class="eyebrow center rv" data-i18n="fokus_eyebrow">Fokus</span>
+    <h2 class="center rv" data-i18n="fokus_h2">Drei Felder. Ein Massstab.</h2>
+    <div class="cards">
+      <div class="card rv">
+        <span class="num">01</span>
+        <h3>Real Estate</h3>
+        <p data-i18n="card1_p">Wohn- und Geschäftshäuser in der Schweiz — mit Substanz erworben, mit Geduld gehalten, mit Sorgfalt entwickelt.</p>
+      </div>
+      <div class="card rv">
+        <span class="num">02</span>
+        <h3 data-i18n="card2_h">Luxusgüter</h3>
+        <p data-i18n="card2_p">Werte, die Bestand haben: ausgewählte Sachwerte abseits der täglichen Märkte — erworben, weil sie bleiben.</p>
+      </div>
+      <div class="card rv">
+        <span class="num">03</span>
+        <h3 data-i18n="card3_h">Beteiligungen</h3>
+        <p data-i18n="card3_p">Unternehmerische Engagements, in denen Kapital und Verantwortung zusammengehören — nahe am Geschäft, nicht am Ticker.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINZIPIEN -->
+<section class="sec-dark" id="prinzipien">
+  <div class="wrap">
+    <span class="eyebrow center rv" data-i18n="prin_eyebrow">Prinzipien</span>
+    <h2 class="center rv" data-i18n="prin_h2">Wonach wir handeln.</h2>
+    <div class="prin">
+      <div class="pr rv">
+        <span class="num">01</span>
+        <h3 data-i18n="pr1_h">Diskretion</h3>
+        <p data-i18n="pr1_p">Wir sprechen über Verantwortung, nicht über Portfolien. Was uns anvertraut ist, bleibt privat.</p>
+      </div>
+      <div class="pr rv">
+        <span class="num">02</span>
+        <h3 data-i18n="pr2_h">Unabhängigkeit</h3>
+        <p data-i18n="pr2_p">Eigenes Kapital, eigene Entscheidungen. Wir folgen keiner Benchmark und keinem Konsens.</p>
+      </div>
+      <div class="pr rv">
+        <span class="num">03</span>
+        <h3 data-i18n="pr3_h">Substanz</h3>
+        <p data-i18n="pr3_p">Wir investieren in das, was man betreten, prüfen und verstehen kann.</p>
+      </div>
+      <div class="pr rv">
+        <span class="num">04</span>
+        <h3 data-i18n="pr4_h">Geduld</h3>
+        <p data-i18n="pr4_p">Zeit ist der einzige Vorteil, den man nicht kaufen, aber wählen kann. Wir wählen ihn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIEN (statisch gerendert → indexierbar) -->
+<section id="studien">
+  <div class="wrap">
+    <span class="eyebrow center rv" data-i18n="stud_eyebrow">Studien</span>
+    <h2 class="center rv" data-i18n="stud_h2">Wie wir denken.</h2>
+    <div class="study-grid">
+      <a class="scard rv" href="study.html?id=verteilung-folgt-verdraengung">
+        <div class="meta"><span>Ökonomie</span><span>02.09.2026 · 9 Min.</span></div>
+        <h3>Verteilung folgt Verdrängung</h3>
+        <p>Wenn dieselbe Person plötzlich das Dreifache schafft, braucht es die dritte Stelle nicht mehr. Über die stille Verdrängung durch Produktivität und die Verteilung, die ihr historisch immer gefolgt ist.</p>
+        <span class="read" data-i18n="read">Lesen →</span>
+      </a>
+      <a class="scard rv" href="study.html?id=knappheit-ist-ein-geschaeftsmodell">
+        <div class="meta"><span>Ökonomie</span><span>28.08.2026 · 7 Min.</span></div>
+        <h3>Knappheit ist ein Geschäftsmodell</h3>
+        <p>Elon Musk sagt, 2036 spiele Geld keine Rolle mehr. Die Richtung stimmt, das Datum nicht. Über Preise, die nicht an Kosten hängen, und den steigenden Wert menschlichen Service.</p>
+        <span class="read" data-i18n="read">Lesen →</span>
+      </a>
+      <a class="scard rv" href="study.html?id=das-getriebe-nicht-der-motor">
+        <div class="meta"><span>Technologie</span><span>19.08.2026 · 7 Min.</span></div>
+        <h3>Das Getriebe, nicht der Motor</h3>
+        <p>Die eigentliche Geschichte der nächsten zehn Jahre ist nicht die Leistung der Modelle, sondern die Integration: wie Intelligenz in die Systeme kommt, in denen Arbeit wirklich passiert.</p>
+        <span class="read" data-i18n="read">Lesen →</span>
+      </a>
+    </div>
+    <div class="more rv">
+      <a href="studien.html" class="link-lux"><span data-i18n="stud_all">Alle Studien</span> <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FÜHRUNG -->
+<section class="sec-dark" id="fuehrung">
+  <div class="wrap">
+    <span class="eyebrow center rv" data-i18n="lead_eyebrow">Führung</span>
+    <h2 class="center rv" data-i18n="lead_h2">Ein Name. Eine Verantwortung.</h2>
+    <div class="lead-grid rv">
+      <img class="portrait" src="assets/brand/kaito-card.jpg" width="320" height="320"
+           loading="lazy" decoding="async" alt="Kaito Weingart, Gründer der KWI Capital AG">
+      <div>
+        <h3>Kaito Weingart</h3>
+        <p class="role" data-i18n="lead_role">Gründer &amp; Verwaltungsrat</p>
+        <p data-i18n="lead_bio">Kaito Weingart führt das Haus mit unternehmerischem Hintergrund in Schweizer Immobilien und Hospitality. Er verantwortet Akquisition, Engagements und die Beziehungen des Hauses — persönlich.</p>
+        <div class="lead-links">
+          <a href="https://www.linkedin.com/company/kwicapital" rel="noopener">LinkedIn</a>
+          <a href="mailto:info@kwicapital.ch">E-Mail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="cta" id="kontakt">
+  <picture>
+    <source media="(max-width:720px)" srcset="assets/brand/hero-v2-960.webp">
+    <img class="bgimg" src="assets/brand/hero-v2.webp" width="1920" height="805"
+         alt="" aria-hidden="true" loading="lazy" decoding="async">
+  </picture>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow center rv" data-i18n="kont_eyebrow">Kontakt</span>
+    <h2 class="rv" data-i18n="kont_h2">Auf Einladung.</h2>
+    <p class="intro rv" data-i18n="kont_p">Wir wachsen über Empfehlung und persönliche Beziehung. Anfragen behandeln wir vertraulich — und beantworten sie persönlich.</p>
+    <a href="mailto:info@kwicapital.ch" class="mail rv">info@kwicapital.ch</a>
+
+    <form class="invite rv" id="inviteForm" novalidate>
+      <p class="hint" data-i18n="form_hint">Oder hinterlassen Sie uns eine Nachricht</p>
+      <div class="field">
+        <label for="f-name" data-i18n="form_name">Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-mail" data-i18n="form_mail">E-Mail</label>
+        <input id="f-mail" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-msg" data-i18n="form_msg">Ihr Anliegen</label>
+        <textarea id="f-msg" name="message" required></textarea>
+      </div>
+      <button type="submit" data-i18n="form_btn">Anfrage senden</button>
+      <p class="privacy-note" data-i18n="form_note">Ihre Angaben verlassen den Browser nicht — die Anfrage wird über Ihr eigenes E-Mail-Programm versendet.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <img class="logo" src="assets/brand/kuroiwa-white-v2.webp" width="1120" height="315" alt="Kuroiwa" loading="lazy">
+        <p class="desc">黒岩 · Kuroiwa · <span data-i18n="foot_ch">Schweiz</span></p>
+        <div class="flags" title="Japan × Schweiz" aria-hidden="true">
+          <span><svg width="20" height="14" viewBox="0 0 30 20"><rect width="30" height="20" rx="3" fill="#FAF9F6"/><circle cx="15" cy="10" r="5.6" fill="#BC002D"/></svg></span>
+          <span><svg width="20" height="14" viewBox="0 0 30 20"><rect width="30" height="20" rx="3" fill="#D52B1E"/><rect x="12.9" y="4.5" width="4.2" height="11" rx="1" fill="#fff"/><rect x="9.5" y="7.9" width="11" height="4.2" rx="1" fill="#fff"/></svg></span>
+        </div>
+      </div>
+      <div>
+        <h5>Navigation</h5>
+        <a href="#haus" data-i18n="nav_haus2">Das Haus</a>
+        <a href="#studien" data-i18n="nav_studien2">Studien</a>
+        <a href="admin.html">Members</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot_kontakt">Kontakt</h5>
+        <a href="mailto:info@kwicapital.ch">info@kwicapital.ch</a>
+        <a href="impressum.html" data-i18n="foot_imp">Impressum &amp; Datenschutz</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>KWI Capital AG · Schwerzistrasse 34 · 8807 Freienbach · <span data-i18n="foot_ch2">Schweiz</span></span><br>
+      <span>UID CHE-221.054.296 · MWST CHE-221.054.296 MWST</span>
+      <p class="disclaimer" data-i18n="foot_disc">Die Inhalte dieser Website dienen ausschliesslich der Information. Sie stellen keine Anlageberatung, kein Angebot und keine Aufforderung zum Erwerb von Finanzinstrumenten dar.</p>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Kuroiwa · 黒岩</span>
+      <span>KWI Capital AG</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Nav solid on scroll (passive) ---- */
+  var nav = document.querySelector('.nav');
+  var onScroll = function(){ nav.classList.toggle('solid', window.scrollY > 40); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Burger ---- */
+  var burger = document.querySelector('.burger'), links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.classList.toggle('x', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+  });
+  links.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); burger.classList.remove('x'); burger.setAttribute('aria-expanded','false'); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && links.classList.contains('open')){ links.classList.remove('open'); burger.classList.remove('x'); burger.setAttribute('aria-expanded','false'); burger.focus(); }
+  });
+
+  /* ---- Reveal on scroll (transform/opacity only) ---- */
+  var els = document.querySelectorAll('.rv');
+  if(reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Dezentes Formular → mailto (keine Drittserver, revDSG-freundlich) ---- */
+  var form = document.getElementById('inviteForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var n = document.getElementById('f-name').value.trim();
+    var m = document.getElementById('f-mail').value.trim();
+    var msg = document.getElementById('f-msg').value.trim();
+    if(!n || !m || !msg){ form.reportValidity(); return; }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event:'generate_lead', form_id:'inviteForm'});
+    var subject = (document.documentElement.lang === 'en' ? 'Inquiry — ' : 'Anfrage — ') + n;
+    var body = msg + '\n\n—\n' + n + '\n' + m;
+    window.location.href = 'mailto:info@kwicapital.ch?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+
+  /* ---- i18n DE/EN ---- */
+  var EN = {
+    skip:'Skip to content',
+    nav_haus:'The House', nav_fokus:'Focus', nav_studien:'Writing', nav_kontakt:'Contact',
+    nav_haus2:'The House', nav_studien2:'Writing',
+    hero_h1:'Private capital, invested with conviction.',
+    hero_sub:'Independent Swiss investment house · Real estate · Luxury assets · Private holdings',
+    scroll:'Scroll',
+    haus_eyebrow:'The House', haus_h2:'黒岩 — the black rock.',
+    haus_p1:'Kuroiwa is an independent Swiss investment house based in Freienbach on Lake Zurich. We invest private capital — concentrated, long-term and with our own conviction — in real estate, luxury assets and entrepreneurial holdings.',
+    haus_p2:'The name is the programme: the calm of the rock, the precision of two cultures — Japan and Switzerland. We grow through relationships, not reach.',
+    fact1_b:'Stock corporation', fact1_s:'under Swiss law', fact2_s:'Commercial register / UID',
+    fact3_s:'Domicile on Lake Zurich', fact4_s:'Founded',
+    fokus_eyebrow:'Focus', fokus_h2:'Three fields. One standard.',
+    card1_p:'Residential and commercial properties in Switzerland — acquired with substance, held with patience, developed with care.',
+    card2_h:'Luxury assets',
+    card2_p:'Values that endure: selected tangible assets beyond the daily markets — acquired because they last.',
+    card3_h:'Private holdings',
+    card3_p:'Entrepreneurial engagements where capital and responsibility belong together — close to the business, not the ticker.',
+    prin_eyebrow:'Principles', prin_h2:'What guides us.',
+    pr1_h:'Discretion', pr1_p:'We speak about responsibility, not portfolios. What is entrusted to us remains private.',
+    pr2_h:'Independence', pr2_p:'Our own capital, our own decisions. We follow no benchmark and no consensus.',
+    pr3_h:'Substance', pr3_p:'We invest in what can be entered, examined and understood.',
+    pr4_h:'Patience', pr4_p:'Time is the only advantage one cannot buy — but can choose. We choose it.',
+    stud_eyebrow:'Writing', stud_h2:'How we think.', stud_all:'All essays', read:'Read (German) →',
+    lead_eyebrow:'Leadership', lead_h2:'One name. One responsibility.',
+    lead_role:'Founder & Board Member',
+    lead_bio:'Kaito Weingart leads the house with an entrepreneurial background in Swiss real estate and hospitality. He is personally responsible for acquisitions, engagements and the relationships of the house.',
+    kont_eyebrow:'Contact', kont_h2:'By invitation.',
+    kont_p:'We grow through referrals and personal relationships. Inquiries are treated confidentially — and answered personally.',
+    form_hint:'Or leave us a message',
+    form_name:'Name', form_mail:'Email', form_msg:'Your inquiry', form_btn:'Send inquiry',
+    form_note:'Your details never leave the browser — the inquiry is sent via your own email client.',
+    foot_ch:'Switzerland', foot_ch2:'Switzerland', foot_kontakt:'Contact', foot_imp:'Legal & Privacy',
+    foot_disc:'The contents of this website are for information purposes only. They constitute neither investment advice nor an offer or solicitation to acquire financial instruments.'
+  };
+  var DE = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    DE[el.getAttribute('data-i18n')] = el.innerHTML;
+  });
+  var btn = document.getElementById('langBtn');
+  function apply(lang){
+    var dict = lang === 'en' ? EN : DE;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    document.documentElement.lang = lang;
+    btn.textContent = lang === 'en' ? 'DE' : 'EN';
+    btn.setAttribute('aria-label', lang === 'en' ? 'Sprache auf Deutsch umstellen' : 'Switch language to English');
+    try{ localStorage.setItem('kwi-lang', lang); }catch(err){}
+  }
+  btn.addEventListener('click', function(){
+    apply(document.documentElement.lang === 'en' ? 'de' : 'en');
+  });
+  try{
+    var saved = localStorage.getItem('kwi-lang');
+    if(saved === 'en') apply('en');
+  }catch(err){}
+})();
+</script>
+<!-- KWI-ANALYTICS (Consent-Banner, GTM, Clarity — gemeinsame Infrastruktur) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFHC6SKX" height="0" width="0" style="display:none;visibility:hidden" title="gtm"></iframe></noscript>
+<script src="/assets/js/kwi-analytics.js" defer></script>
+</body>
+</html>
