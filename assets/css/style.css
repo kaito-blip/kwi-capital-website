@@ -2,7 +2,7 @@
    KUROIWA · KWI CAPITAL AG
    Sleek · Black & Red · Boutique / Blackstone-grade
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('../fonts/fonts.css');
 
 :root{
   --black:#0a0a0a;
