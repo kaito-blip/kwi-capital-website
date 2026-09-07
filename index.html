@@ -86,6 +86,64 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
     <h2 class="rv">Auf Einladung.</h2>
     <p class="rv">Anfragen behandeln wir persönlich und vertraulich.</p>
     <a href="mailto:info@kwicapital.ch" class="mail rv">info@kwicapital.ch</a>
+
+    <style>
+      .kwi-lead { max-width: 560px; margin: 44px auto 0; text-align: left; }
+      .kwi-lead label { display:block; font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:rgba(246,245,242,.55); margin:0 0 7px; }
+      .kwi-lead input, .kwi-lead select, .kwi-lead textarea { width:100%; background:rgba(246,245,242,.05); border:1px solid rgba(246,245,242,.22); color:#f6f5f2; font:15px/1.5 inherit; font-family:inherit; padding:12px 14px; border-radius:2px; outline:none; transition:border-color .2s; margin-bottom:16px; box-sizing:border-box; }
+      .kwi-lead input:focus, .kwi-lead select:focus, .kwi-lead textarea:focus { border-color:#c0271f; }
+      .kwi-lead select option { background:#141416; color:#f6f5f2; }
+      .kwi-lead textarea { resize:vertical; min-height:96px; }
+      .kwi-lead .zwei { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+      @media (max-width:560px){ .kwi-lead .zwei { grid-template-columns:1fr; } }
+      .kwi-lead .ok { display:flex; gap:10px; align-items:flex-start; font-size:12.5px; color:rgba(246,245,242,.6); line-height:1.5; margin-bottom:18px; }
+      .kwi-lead .ok input { width:17px; height:17px; flex-shrink:0; accent-color:#c0271f; margin:2px 0 0; }
+      .kwi-lead button { cursor:pointer; background:#c0271f; color:#fff; border:1px solid #c0271f; padding:14px 30px; font:600 13px/1 inherit; font-family:inherit; letter-spacing:.14em; text-transform:uppercase; border-radius:2px; transition:background .2s; }
+      .kwi-lead button:hover { background:#a01f18; }
+      .kwi-lead .status { font-size:14px; min-height:20px; margin:10px 0 0; }
+      .kwi-lead .status.err { color:#ff8178; }
+      .kwi-dank { display:none; max-width:560px; margin:44px auto 0; }
+      .kwi-dank.zeig { display:block; }
+      .kwi-hp { position:absolute; left:-9999px; }
+    </style>
+    <form class="kwi-lead rv" id="kwiLead" novalidate>
+      <input type="text" name="_gotcha" class="kwi-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="zwei">
+        <div><label for="kl-name">Name</label><input id="kl-name" name="name" type="text" autocomplete="name" required></div>
+        <div><label for="kl-mail">E-Mail</label><input id="kl-mail" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="zwei">
+        <div><label for="kl-tel">Telefon (optional)</label><input id="kl-tel" name="telefon" type="tel" autocomplete="tel"></div>
+        <div><label for="kl-anliegen">Anliegen</label><select id="kl-anliegen" name="anliegen" required>
+          <option value="">Bitte wählen …</option><option>Beteiligung</option><option>Immobilien</option><option>Finanzierung</option><option>Anderes</option>
+        </select></div>
+      </div>
+      <label for="kl-msg">Nachricht</label><textarea id="kl-msg" name="nachricht" required></textarea>
+      <label class="ok"><input type="checkbox" name="einwilligung" required value="ja"><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden.</span></label>
+      <button type="submit">Anfrage senden</button>
+      <p class="status" id="kwiStatus" role="status" aria-live="polite"></p>
+    </form>
+    <div class="kwi-dank" id="kwiDank"><h3 style="margin:0 0 8px">Danke — wir melden uns.</h3><p style="color:rgba(246,245,242,.65);margin:0">Ihre Anfrage ist eingegangen. Erste Rückmeldung in der Regel innert 24 Stunden.</p></div>
+    <script>
+    (function(){
+      var EP = 'https://script.google.com/macros/s/AKfycbymkMpIEbcoW9rb1I5Gh41MIJLAxWE8_gxH4I-no3Gv1EeRDpSPRKZDP80ACnvisbRn/exec';
+      var f = document.getElementById('kwiLead'), st = document.getElementById('kwiStatus');
+      f.addEventListener('submit', async function(e){
+        if (!f.checkValidity()) return;
+        e.preventDefault();
+        st.className = 'status'; st.textContent = 'Wird gesendet …';
+        try {
+          var res = await fetch(EP, { method:'POST', body:new URLSearchParams(new FormData(f)) });
+          var a = await res.json().catch(function(){ return {}; });
+          if (res.ok && a.ok !== false) {
+            f.style.display = 'none';
+            document.getElementById('kwiDank').classList.add('zeig');
+            if (window.dataLayer) window.dataLayer.push({ event:'generate_lead', method:'kontaktformular' });
+          } else { st.className='status err'; st.textContent='Senden fehlgeschlagen — bitte direkt an info@kwicapital.ch.'; }
+        } catch(err){ st.className='status err'; st.textContent='Netzwerkfehler — bitte direkt an info@kwicapital.ch.'; }
+      });
+    })();
+    </script>
   </div>
 </section>
 
