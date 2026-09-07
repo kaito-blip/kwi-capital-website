@@ -12,7 +12,7 @@ var CONFIG = {
   EMPFAENGER: 'kaito@kwicapital.ch',
   ABSENDER: 'kaito@kwicapital.ch',
   ABSENDER_NAME: 'KWI Capital AG',
-  GA4_PROPERTY_ID: '',                  // Property-ID (Zahl) der kwicapital-GA4-Property
+  GA4_PROPERTY_ID: '552602431',       // kwicapital-GA4-Property
   REPORT_STUNDE: 7
 };
 var INK = '#0b0b0c', PAPER = '#f6f5f2', ROT = '#c0271f', GRAU = '#8d8b86';
