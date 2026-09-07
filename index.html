@@ -123,24 +123,26 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
       <button type="submit">Anfrage senden</button>
       <p class="status" id="kwiStatus" role="status" aria-live="polite"></p>
     </form>
-    <div class="kwi-dank" id="kwiDank"><h3 style="margin:0 0 8px">Danke — wir melden uns.</h3><p style="color:rgba(246,245,242,.65);margin:0">Ihre Anfrage ist eingegangen. Erste Rückmeldung in der Regel innert 24 Stunden.</p></div>
+    <div class="kwi-dank" id="kwiDank"><h3 style="margin:0 0 8px">Danke für Ihre Anfrage.</h3><p style="color:rgba(246,245,242,.65);margin:0">Wir werden uns zeitnah melden. Eine Bestätigung ist unterwegs an Ihre E-Mail-Adresse.</p></div>
     <script>
     (function(){
       var EP = 'https://script.google.com/macros/s/AKfycbymkMpIEbcoW9rb1I5Gh41MIJLAxWE8_gxH4I-no3Gv1EeRDpSPRKZDP80ACnvisbRn/exec';
       var f = document.getElementById('kwiLead'), st = document.getElementById('kwiStatus');
+      function fertig(){ f.style.display='none'; document.getElementById('kwiDank').classList.add('zeig'); if (window.dataLayer) window.dataLayer.push({ event:'generate_lead', method:'kontaktformular' }); }
       f.addEventListener('submit', async function(e){
-        if (!f.checkValidity()) return;
         e.preventDefault();
+        if (!f.checkValidity()) { f.reportValidity(); return; }
         st.className = 'status'; st.textContent = 'Wird gesendet …';
+        var daten = new URLSearchParams(new FormData(f));
         try {
-          var res = await fetch(EP, { method:'POST', body:new URLSearchParams(new FormData(f)) });
+          var res = await fetch(EP, { method:'POST', body:daten });
           var a = await res.json().catch(function(){ return {}; });
-          if (res.ok && a.ok !== false) {
-            f.style.display = 'none';
-            document.getElementById('kwiDank').classList.add('zeig');
-            if (window.dataLayer) window.dataLayer.push({ event:'generate_lead', method:'kontaktformular' });
-          } else { st.className='status err'; st.textContent='Senden fehlgeschlagen — bitte direkt an info@kwicapital.ch.'; }
-        } catch(err){ st.className='status err'; st.textContent='Netzwerkfehler — bitte direkt an info@kwicapital.ch.'; }
+          if (res.ok && a.ok !== false) fertig();
+          else { st.className='status err'; st.textContent='Senden fehlgeschlagen — bitte direkt an info@kwicapital.ch.'; }
+        } catch(err){
+          try { await fetch(EP, { method:'POST', body:daten, mode:'no-cors' }); fertig(); }
+          catch(e2){ st.className='status err'; st.textContent='Netzwerkfehler — bitte direkt an info@kwicapital.ch.'; }
+        }
       });
     })();
     </script>
