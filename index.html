@@ -102,8 +102,12 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
       .kwi-lead button:hover { background:#a01f18; }
       .kwi-lead .status { font-size:14px; min-height:20px; margin:10px 0 0; }
       .kwi-lead .status.err { color:#ff8178; }
-      .kwi-dank { display:none; max-width:560px; margin:44px auto 0; }
+      .kwi-dank { display:none; max-width:480px; margin:52px auto 0; text-align:center; padding:44px 36px; border:1px solid rgba(246,245,242,.14); background:rgba(246,245,242,.03); }
       .kwi-dank.zeig { display:block; }
+      .kwi-dank .kd-check { width:46px; height:46px; margin:0 auto 20px; border:1.5px solid #c0271f; border-radius:50%; color:#c0271f; font-size:20px; line-height:46px; }
+      .kwi-dank h3 { margin:0 0 10px; font-size:24px; letter-spacing:.01em; color:#f6f5f2; }
+      .kwi-dank p { margin:0; font-size:15px; color:rgba(246,245,242,.7); line-height:1.6; }
+      .kwi-dank .kd-sub { margin-top:16px; padding-top:16px; border-top:1px solid rgba(246,245,242,.1); font-size:12.5px; color:rgba(246,245,242,.45); letter-spacing:.04em; }
       .kwi-hp { position:absolute; left:-9999px; }
     </style>
     <form class="kwi-lead rv" id="kwiLead" novalidate>
@@ -123,7 +127,12 @@ gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',true);
       <button type="submit">Anfrage senden</button>
       <p class="status" id="kwiStatus" role="status" aria-live="polite"></p>
     </form>
-    <div class="kwi-dank" id="kwiDank"><h3 style="margin:0 0 8px">Danke für Ihre Anfrage.</h3><p style="color:rgba(246,245,242,.65);margin:0">Wir werden uns zeitnah melden. Eine Bestätigung ist unterwegs an Ihre E-Mail-Adresse.</p></div>
+    <div class="kwi-dank" id="kwiDank">
+      <div class="kd-check">&#10003;</div>
+      <h3>Danke für Ihre Anfrage.</h3>
+      <p>Wir melden uns zeitnah bei Ihnen.</p>
+      <p class="kd-sub">Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.</p>
+    </div>
     <script>
     (function(){
       var EP = 'https://script.google.com/macros/s/AKfycbymkMpIEbcoW9rb1I5Gh41MIJLAxWE8_gxH4I-no3Gv1EeRDpSPRKZDP80ACnvisbRn/exec';
