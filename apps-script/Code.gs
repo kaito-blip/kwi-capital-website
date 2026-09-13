@@ -51,7 +51,7 @@ function doPost(e) {
       '<p style="margin:0 0 18px;font-family:Georgia,serif;font-size:22px;color:' + INK + '">Guten Tag ' + _esc(p.name) + '</p>' +
       '<p style="margin:0 0 8px;font-size:15px;line-height:1.7;color:#333">Vielen Dank für Ihre Anfrage — sie ist bei uns eingegangen. Sie erhalten in der Regel <b>innert 24 Stunden</b> eine persönliche Rückmeldung.</p>' +
       '<p style="margin:26px 0 12px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:' + GRAU + ';font-weight:bold">Es eilt? Sie erreichen mich direkt:</p>' +
-      '<table cellpadding="0" cellspacing="0"><tr>' + _btn('tel:+41792522570', 'Direkt anrufen — 079 252 25 70', true) +
+      '<table cellpadding="0" cellspacing="0"><tr>' + _btn('tel:+41445977680', 'Direkt anrufen — 044 597 76 80', true) +
       _btn('https://wa.me/41792522570?text=' + encodeURIComponent('Guten Tag Herr Weingart, ich habe soeben eine Anfrage über kwicapital.ch gesendet.'), 'WhatsApp', false) + '</tr></table>' +
       '<p style="margin:26px 0 18px;font-size:15px;color:#333">Freundliche Grüsse</p>' + _signatur();
     GmailApp.sendEmail(p.email, 'Ihre Anfrage bei KWI Capital', '', {
@@ -124,7 +124,7 @@ function _signatur() {
     '<td style="padding:22px 24px;vertical-align:top"><span style="font-family:Helvetica,Arial,sans-serif;color:' + PAPER + ';font-size:16px;font-weight:bold">Kaito Weingart</span><br>' +
     '<span style="font-family:Helvetica,Arial,sans-serif;color:' + ROT + ';font-size:9px;letter-spacing:2px;font-weight:bold">FOUNDER</span>' +
     '<p style="margin:14px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.9">' +
-    '<span style="color:#777">Mobil:</span>&nbsp; <a href="tel:+41792522570" style="color:' + PAPER + ';text-decoration:none">+41 (0) 79 252 25 70</a><br>' +
+    '<span style="color:#777">Telefon:</span>&nbsp; <a href="tel:+41445977680" style="color:' + PAPER + ';text-decoration:none">+41 (0) 44 597 76 80</a><br>' +
     '<span style="color:#777">Mail:</span>&nbsp; <a href="mailto:kaito@kwicapital.ch" style="color:' + PAPER + ';text-decoration:none">kaito@kwicapital.ch</a></p></td>' +
     '<td style="padding:22px 24px;vertical-align:top;border-left:1px solid #26262a">' +
     '<span style="font-family:Georgia,serif;color:' + PAPER + ';font-size:18px">Kuroiwa<span style="color:' + ROT + '">.</span></span><br>' +
