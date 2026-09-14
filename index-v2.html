@@ -185,12 +185,12 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
 .link-lux:hover .arw{transform:translateX(6px)}
 
 /* Führung */
-.lead-grid{display:grid;grid-template-columns:360px 1fr;gap:clamp(36px,5vw,70px);align-items:center;max-width:1000px;margin:64px auto 0}
-.lead-portrait{position:relative;width:100%;aspect-ratio:2/3;overflow:hidden;border:1px solid var(--line-2);background:#d6d4d0}
+.lead-grid{display:grid;grid-template-columns:300px 1fr;gap:clamp(36px,5vw,70px);align-items:center;max-width:960px;margin:64px auto 0}
+.lead-portrait{position:relative;width:100%;aspect-ratio:9/10;overflow:hidden;border:1px solid var(--line-2);background:#d6d4d0}
 .bild-marke{position:absolute;top:18px;right:18px;z-index:2;display:flex;align-items:center;gap:11px}
-.bild-marke img{width:82px;height:auto;display:block;opacity:.52}
+.bild-marke img{width:76px;height:auto;display:block;opacity:.52}
 .bild-marke .strich{width:1px;height:17px;background:rgba(11,11,12,.3)}
-.bild-marke .kanji{font-family:'Hiragino Mincho ProN','Yu Mincho',Georgia,serif;font-size:13.5px;letter-spacing:.16em;color:rgba(11,11,12,.55);line-height:1}
+.bild-marke .kanji{font-family:'Hiragino Mincho ProN','Yu Mincho',Georgia,serif;font-size:12.5px;letter-spacing:.16em;color:rgba(11,11,12,.55);line-height:1}
 .lead-portrait > picture,.lead-portrait > picture img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
 .lead-grid h3{font-size:24px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
 .lead-grid .role{margin-top:6px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red-lt);font-weight:600}
@@ -246,7 +246,7 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
   .cards,.study-grid{grid-template-columns:1fr}
   .footer .top{grid-template-columns:1fr}
   .lead-grid{text-align:center;justify-items:center}
-  .lead-portrait{max-width:320px}
+  .lead-portrait{max-width:280px}
   .lead-links{justify-content:center}
 }
 
@@ -410,8 +410,8 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
     <div class="lead-grid rv">
       <div class="lead-portrait">
         <picture>
-          <source type="image/webp" srcset="assets/brand/kaito-440.webp 440w, assets/brand/kaito-880.webp 880w" sizes="(max-width: 860px) 320px, 360px">
-          <img src="assets/brand/kaito-440.jpg" srcset="assets/brand/kaito-440.jpg 440w, assets/brand/kaito-880.jpg 880w" sizes="(max-width: 860px) 320px, 360px" width="440" height="660" loading="lazy" decoding="async" alt="Kaito Weingart, Gründer der KWI Capital AG">
+          <source type="image/webp" srcset="assets/brand/kaito-324.webp 324w, assets/brand/kaito-648.webp 648w" sizes="(max-width: 860px) 280px, 300px">
+          <img src="assets/brand/kaito-324.jpg" srcset="assets/brand/kaito-324.jpg 324w, assets/brand/kaito-648.jpg 648w" sizes="(max-width: 860px) 280px, 300px" width="324" height="360" loading="lazy" decoding="async" alt="Kaito Weingart, Gründer der KWI Capital AG">
         </picture>
         <span class="bild-marke" aria-hidden="true">
           <img src="assets/brand/kuroiwa-wort-ink.png" alt="" width="520" height="97">

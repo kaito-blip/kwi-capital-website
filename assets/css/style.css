@@ -289,12 +289,12 @@ section{padding-block:clamp(90px,12vw,170px)}
    FUEHRUNG
    ============================================================ */
 .fuehrung{background:var(--black);border-top:1px solid var(--line)}
-.lead-grid{display:grid;grid-template-columns:360px 1fr;gap:clamp(36px,5vw,70px);align-items:center;max-width:1000px;margin:58px auto 0}
-.lead-portrait{position:relative;width:100%;aspect-ratio:2/3;overflow:hidden;border:1px solid var(--line-2);background:#d6d4d0}
+.lead-grid{display:grid;grid-template-columns:300px 1fr;gap:clamp(36px,5vw,70px);align-items:center;max-width:960px;margin:58px auto 0}
+.lead-portrait{position:relative;width:100%;aspect-ratio:9/10;overflow:hidden;border:1px solid var(--line-2);background:#d6d4d0}
 .bild-marke{position:absolute;top:18px;right:18px;z-index:2;display:flex;align-items:center;gap:11px}
-.bild-marke img{width:82px;height:auto;display:block;opacity:.52}
+.bild-marke img{width:76px;height:auto;display:block;opacity:.52}
 .bild-marke .strich{width:1px;height:17px;background:rgba(11,11,12,.3)}
-.bild-marke .kanji{font-family:'Hiragino Mincho ProN','Yu Mincho',Georgia,serif;font-size:13.5px;letter-spacing:.16em;color:rgba(11,11,12,.55);line-height:1}
+.bild-marke .kanji{font-family:'Hiragino Mincho ProN','Yu Mincho',Georgia,serif;font-size:12.5px;letter-spacing:.16em;color:rgba(11,11,12,.55);line-height:1}
 .lead-portrait > picture,.lead-portrait > picture img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
 .lead-grid h3{font-size:clamp(22px,2.4vw,27px);font-weight:500;letter-spacing:-.01em;color:var(--white)}
 .lead-grid .role{margin-top:8px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--red-h);font-weight:600}
@@ -304,7 +304,7 @@ section{padding-block:clamp(90px,12vw,170px)}
 .lead-links a:hover{color:#fff;border-bottom-color:#fff}
 @media(max-width:720px){
   .lead-grid{grid-template-columns:1fr;gap:32px;justify-items:start}
-  .lead-portrait{max-width:320px}
+  .lead-portrait{max-width:280px}
 }
 
 /* ============================================================
