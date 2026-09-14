@@ -403,8 +403,11 @@ section{padding:clamp(90px,12vw,150px) 0;position:relative}
     <span class="eyebrow center rv" data-i18n="lead_eyebrow">Führung</span>
     <h2 class="center rv" data-i18n="lead_h2">Ein Name. Eine Verantwortung.</h2>
     <div class="lead-grid rv">
-      <img class="portrait" src="assets/brand/kaito-card.jpg" width="320" height="320"
-           loading="lazy" decoding="async" alt="Kaito Weingart, Gründer der KWI Capital AG">
+      <picture>
+        <source type="image/webp" srcset="assets/brand/kaito-sq-320.webp 320w, assets/brand/kaito-sq-640.webp 640w" sizes="200px">
+        <img class="portrait" src="assets/brand/kaito-sq-320.jpg" srcset="assets/brand/kaito-sq-320.jpg 320w, assets/brand/kaito-sq-640.jpg 640w" sizes="200px" width="320" height="320"
+             loading="lazy" decoding="async" alt="Kaito Weingart, Gründer der KWI Capital AG">
+      </picture>
       <div>
         <h3>Kaito Weingart</h3>
         <p class="role" data-i18n="lead_role">Gründer &amp; Verwaltungsrat</p>

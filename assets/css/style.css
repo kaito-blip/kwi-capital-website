@@ -286,6 +286,23 @@ section{padding-block:clamp(90px,12vw,170px)}
 }
 
 /* ============================================================
+   FUEHRUNG
+   ============================================================ */
+.fuehrung{background:var(--black);border-top:1px solid var(--line)}
+.lead-grid{display:grid;grid-template-columns:240px 1fr;gap:clamp(36px,5vw,70px);align-items:center;max-width:900px;margin:58px auto 0}
+.lead-grid .portrait{width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line-2);filter:grayscale(.2) contrast(1.03)}
+.lead-grid h3{font-size:clamp(22px,2.4vw,27px);font-weight:500;letter-spacing:-.01em;color:var(--white)}
+.lead-grid .role{margin-top:8px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--red-h);font-weight:600}
+.lead-grid .bio{margin-top:20px;font-size:15.5px;font-weight:300;color:var(--grey);max-width:54ch;line-height:1.75}
+.lead-links{margin-top:26px;display:flex;gap:26px;flex-wrap:wrap;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.lead-links a{color:var(--grey);border-bottom:1px solid var(--line);padding-bottom:6px;transition:.35s var(--ease)}
+.lead-links a:hover{color:#fff;border-bottom-color:#fff}
+@media(max-width:720px){
+  .lead-grid{grid-template-columns:1fr;gap:32px;justify-items:start}
+  .lead-grid .portrait{max-width:230px}
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media(max-width:900px){
